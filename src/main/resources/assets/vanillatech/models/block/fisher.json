@@ -1,0 +1,23 @@
+{
+	"parent": "block/block",
+    "textures": {
+        "0": "vanillatech:blocks/fisher_side",
+        "1": "vanillatech:blocks/fisher_vert",
+		"particle": "vanillatech:blocks/fisher_vert"
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 1.0, -1.5000000074505806, 1.0 ], 
+            "to": [ 15.0, 0.4999999925494194, 15.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 1.0, 14.0, 15.0, 16.0 ] },
+                "east": { "texture": "#0", "uv": [ 1.0, 14.0, 15.0, 16.0 ] },
+                "south": { "texture": "#0", "uv": [ 1.0, 14.0, 15.0, 16.0 ] },
+                "west": { "texture": "#0", "uv": [ 1.0, 14.0, 15.0, 16.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 15.0, 15.0 ] },
+                "down": { "texture": "#1", "uv": [ 0.0, 0.0, 15.0, 15.0 ] }
+            }
+        }
+    ]
+}

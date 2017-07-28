@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:shield_totem",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftShieldTotem"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftShieldTotem.desc"
+		}
+	},
+	"parent": "vanillatech:main/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:shield_totem",
+						"data": 0
+					}
+				]
+			}
+		}
+	}
+}

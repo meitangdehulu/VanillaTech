@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "vanillatech:blocks/glowstone_ore",
+		"overlay": "vanillatech:blocks/glowstone_ore_overlay",
+		"redstone_teleporter_on": "vanillatech:blocks/redstone_teleporter_on",
+		"redstone_teleporter_off": "vanillatech:blocks/redstone_teleporter_off",
+		"ender_torch_off": "vanillatech:blocks/ender_torch_off",
+		"ender_torch_on": "vanillatech:blocks/ender_torch_on",
+		"netherstar_ore": "vanillatech:blocks/netherstar_ore"
+	}
+}

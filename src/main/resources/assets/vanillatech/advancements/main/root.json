@@ -1,0 +1,27 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:red_stone",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/root"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/root.desc"
+		},
+		"background": "vanillatech:textures/blocks/red_stone.png"
+	},
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:red_cobblestone"
+					}
+				]
+			}
+		}
+	}
+}

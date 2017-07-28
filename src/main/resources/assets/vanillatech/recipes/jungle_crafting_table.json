@@ -1,0 +1,12 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:jungle_crafting_table"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "pp", "pp" ],
+    "key": {
+		"p": { "item": "minecraft:planks", "data": 3 }
+    },
+    "result": { "item": "vanillatech:jungle_crafting_table" }
+}

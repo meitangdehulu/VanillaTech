@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:charcoal_block",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftCharcoalBlock"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftCharcoalBlock.desc"
+		}
+	},
+	"parent": "vanillatech:main/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:charcoal_block",
+						"data": 0
+					}
+				]
+			}
+		}
+	}
+}

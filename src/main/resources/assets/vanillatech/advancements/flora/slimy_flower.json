@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:flora/slimy_flower",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:flora/breakSlimyFlower"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:flora/breakSlimyFlower.desc"
+		}
+	},
+	"parent": "vanillatech:flora/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:impossible",
+			"conditions": {
+			}
+		}
+	}
+}

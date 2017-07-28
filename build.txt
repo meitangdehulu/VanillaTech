@@ -1,0 +1,8 @@
+forge_version=1.12-14.21.1.2400
+mod_version=1b
+hammercore_version=1.9.3.8
+
+release_type=beta
+minecraft_version=1.12
+
+project_id=273213

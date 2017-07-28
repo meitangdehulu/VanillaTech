@@ -1,0 +1,12 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:charcoal_block"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "c" ],
+    "key": {
+		"c": { "item": "vanillatech:compressed_charcoal_block" }
+    },
+    "result": { "item": "vanillatech:charcoal_block", "count": 9 }
+}

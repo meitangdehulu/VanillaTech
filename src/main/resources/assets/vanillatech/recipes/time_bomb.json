@@ -1,0 +1,20 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:time_bomb"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "Tim", "e_B", "oMb" ],
+    "key": {
+		"T": { "item": "minecraft:tnt" },
+		"i": { "item": "vanillatech:unstable_metal_ingot" },
+		"m": { "item": "minecraft:tnt" },
+		"e": { "item": "vanillatech:unstable_metal_ingot" },
+		"_": { "item": "vanillatech:netherstar_shard" },
+		"B": { "item": "vanillatech:unstable_metal_ingot" },
+		"o": { "item": "minecraft:tnt" },
+		"M": { "item": "vanillatech:unstable_metal_ingot" },
+		"b": { "item": "minecraft:tnt" }
+    },
+    "result": { "item": "vanillatech:time_bomb" }
+}

@@ -1,0 +1,10 @@
+[
+	{
+		"modid": "vanillatech",
+		"name": "Vanilla Tech",
+		"description": "Adds different handy items and blocks",
+		"url": "",
+		"authorList": [ "APengu" ],
+		"logoFile": "assets/vanillatech/textures/logo.png"
+	}
+]

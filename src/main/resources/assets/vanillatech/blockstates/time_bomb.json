@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "phase=green": { "model": "vanillatech:time_bomb_green" },
+		"phase=yellow": { "model": "vanillatech:time_bomb_yellow" },
+		"phase=red": { "model": "vanillatech:time_bomb_red" }
+    }
+}

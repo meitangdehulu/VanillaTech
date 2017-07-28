@@ -1,0 +1,110 @@
+itemGroup.vanillatech=Vanilla Tech
+
+
+
+tile.vanillatech:charcoal_block.name=Charcoal Block
+tile.vanillatech:compressed_charcoal_block.name=Compressed Charcoal Block
+tile.vanillatech:compressed_coal_block.name=Compressed Coal Block
+tile.vanillatech:red_stone.name=Red Rock
+tile.vanillatech:red_cobblestone.name=Red Cobblestone
+tile.vanillatech:quartz_ore.name=Quartz Ore
+tile.vanillatech:acacia_crafting_table.name=Acacia Crafting Table
+tile.vanillatech:birch_crafting_table.name=Birch Crafting Table
+tile.vanillatech:dark_oak_crafting_table.name=Dark Oak Crafting Table
+tile.vanillatech:jungle_crafting_table.name=Jungle Crafting Table
+tile.vanillatech:spruce_crafting_table.name=Spruce Crafting Table
+tile.vanillatech:glowstone_ore.name=Glowstone Ore
+tile.vanillatech:witherproof_red_stone.name=Wither-Proof Red Rock
+tile.vanillatech:mossy_red_cobblestone.name=Mossy Red Cobblestone
+tile.vanillatech:quartz_spike.name=Quartz Spike
+tile.vanillatech:netherstar_ore.name=Nether Star Ore
+tile.vanillatech:redstone_teleporter.name=Redstone Reciesender
+tile.vanillatech:enhanced_furnace.name=Enhanced Furnace
+tile.vanillatech:enhanced_furnace.tooltip0=Can be enchanted.
+tile.vanillatech:unstable_metal_block.name=Block of Unstable Metal
+tile.vanillatech:fisher.name=Auto-Fisher
+tile.vanillatech:anriatphyte_block.name=Block of Anriatphyte Crystals
+
+tile.vanillatech:flora/slimy_flower.name=Slimy Flower
+tile.vanillatech:flora/lavender.name=Lavender
+tile.vanillatech:flora/buttercup.name=Buttercup
+tile.vanillatech:flora/daisy.name=Daisy
+
+
+
+item.vanillatech:shield_totem.name=Totem of Shield
+item.vanillatech:shield_totem.tooltip0=Completely protects player from taking
+item.vanillatech:shield_totem.tooltip1=any damage while in hotbar or offhand.
+item.vanillatech:creative_recipe_book.name=Creative Recipe Book
+item.vanillatech:creative_recipe_book.tooltip0=Use to unlock all known recipes
+item.vanillatech:backpack.name=Backpack
+item.vanillatech:backpack.tooltip0=Portable double chest
+item.vanillatech:netherstar_shard.name=Nether Star Shard
+item.vanillatech:enhanced_pickaxe.name=Enhanced Pickaxe
+item.vanillatech:unstable_metal_ingot.name=Unstable Metal Ingot
+item.vanillatech:crystal_anriatphyte.name=Anriatphyte Crystal
+
+
+
+potion.effect.levitation_short=Potion of Levitation
+potion.effect.levitation_long=Potion of Levitation
+splash_potion.effect.levitation_short=Splash Potion of Levitation
+splash_potion.effect.levitation_long=Splash Potion of Levitation
+lingering_potion.effect.levitation_short=Lingering Potion of Levitation
+lingering_potion.effect.levitation_long=Lingering Potion of Levitation
+
+
+
+enchantment.vanillatech:auto_smelt=Auto-Smelt
+enchantment.vanillatech:infernal_prediction=Infernal Predictor
+enchantment.vanillatech:repair=Self-Repair
+
+
+
+death.attack.vanillatech:quartz_spike=%s was standing on quartz spike.
+death.attack.vanillatech:unstable_block_form=%s was unstabilized.
+death.attack.vanillatech:nether_star_dissolve=%s was dissolved.
+death.attack.vanillatech:anriatphyte_block=%s was slain by Anriatphyte Energy.
+
+
+
+advancement.vanillatech:main/root=Vanilla Tech
+advancement.vanillatech:main/root.desc=Expands Minecraft with missing pieces
+
+advancement.vanillatech:main/craftBackpack=Expanding Inventory
+advancement.vanillatech:main/craftBackpack.desc=Craft a Backpack
+
+advancement.vanillatech:main/craftCoalBlock=Better Fuel
+advancement.vanillatech:main/craftCoalBlock.desc=Craft Coal Block
+
+advancement.vanillatech:main/craftCharcoalBlock=Better Charcoal
+advancement.vanillatech:main/craftCharcoalBlock.desc=Craft Charcoal Block
+
+advancement.vanillatech:main/craftCompressedCoalBlock=Even Better Fuel
+advancement.vanillatech:main/craftCompressedCoalBlock.desc=Craft Compressed Coal Block
+
+advancement.vanillatech:main/craftCompressedCharcoalBlock=Even Better Charcoal
+advancement.vanillatech:main/craftCompressedCharcoalBlock.desc=Craft Compressed Charcoal Block
+
+advancement.vanillatech:main/craftShieldTotem=Like a God
+advancement.vanillatech:main/craftShieldTotem.desc=Craft Totem of Shield and become unkillable
+
+advancement.vanillatech:main/craftWitherProofRedStone=Contain The Powers
+advancement.vanillatech:main/craftWitherProofRedStone.desc=Craft Wither-Proof Red Rock to contain Wither inside of a box
+
+advancement.vanillatech:main/craftEnhancedPickaxe=Enhanced Tool: Pickaxe
+advancement.vanillatech:main/craftEnhancedPickaxe.desc=Craft Enhanced Pickaxe from Nether Star Shards, stick and diamond pickaxe
+
+advancement.vanillatech:main/makeUnstableMetalBlock=KABOOM!!
+advancement.vanillatech:main/makeUnstableMetalBlock.desc=Obtain Unstable Metal Block by dropping Nether Star Shard on top of Iron Block and exploding it.
+
+
+
+advancement.vanillatech:flora/root=Vanilla Tech: Flora
+advancement.vanillatech:flora/root.desc=Fancy plants!
+
+advancement.vanillatech:flora/breakSlimyFlower=Slimy Situation
+advancement.vanillatech:flora/breakSlimyFlower.desc=Find and harvest Slimy Flower
+
+advancement.vanillatech:flora/collectAllFlowers=All the smell!
+advancement.vanillatech:flora/collectAllFlowers.desc=Collect all flowers from Vanilla Tech

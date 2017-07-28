@@ -1,0 +1,10 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "vanillatech:items/backpack_closed"
+	},
+    "overrides": [
+        { "predicate": { "open": 0.0 }, "model": "vanillatech:item/backpack" },
+        { "predicate": { "open": 1.0 }, "model": "vanillatech:item/backpack_open" }
+    ]
+}

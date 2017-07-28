@@ -1,0 +1,14 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:backpack"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "lll", "cic", "lll" ],
+    "key": {
+		"l": { "ore": "leather", "type": "forge:ore_dict" },
+		"c": { "ore": "chestWood", "type": "forge:ore_dict" },
+		"i": { "ore": "nuggetIron", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "vanillatech:backpack" }
+}

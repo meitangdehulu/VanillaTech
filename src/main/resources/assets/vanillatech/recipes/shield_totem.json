@@ -1,0 +1,13 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:shield_totem"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "t", "s", "t" ],
+    "key": {
+		"t": { "item": "minecraft:totem_of_undying" },
+		"s": { "item": "minecraft:nether_star" }
+    },
+    "result": { "item": "vanillatech:shield_totem" }
+}

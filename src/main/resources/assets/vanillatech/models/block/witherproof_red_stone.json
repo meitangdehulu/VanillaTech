@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "vanillatech:blocks/witherproof_red_stone"
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:flora/lavender"
+		},
+		"title": {
+			"translate": "advancement.vanillatech:flora/collectAllFlowers"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:flora/collectAllFlowers.desc"
+		},
+        "frame": "challenge"
+	},
+	"parent": "vanillatech:flora/root",
+    "rewards": {
+        "experience": 100
+    },
+	"criteria": {
+		"slimy_flower": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:flora/slimy_flower"
+					}
+				]
+			}
+		},
+		"lavender": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:flora/lavender"
+					}
+				]
+			}
+		},
+		"buttercup": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:flora/buttercup"
+					}
+				]
+			}
+		},
+		"daisy": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:flora/daisy"
+					}
+				]
+			}
+		}
+	}
+}

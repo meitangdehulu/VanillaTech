@@ -1,0 +1,9 @@
+{
+    "conditions": [],
+    "type": "forge:ore_shaped",
+    "pattern": [ "p" ],
+    "key": {
+		"p": { "item": "vanillatech:dark_oak_crafting_table" }
+    },
+    "result": { "item": "minecraft:crafting_table" }
+}

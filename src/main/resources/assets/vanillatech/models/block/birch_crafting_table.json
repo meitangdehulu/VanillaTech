@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "vanillatech:blocks/birch_crafting_table_front",
+        "down": "blocks/planks_birch",
+        "up": "vanillatech:blocks/birch_crafting_table_top",
+        "north": "vanillatech:blocks/birch_crafting_table_front",
+        "east": "vanillatech:blocks/birch_crafting_table_side",
+        "south": "vanillatech:blocks/birch_crafting_table_side",
+        "west": "vanillatech:blocks/birch_crafting_table_front"
+    }
+}

@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:compressed_charcoal_block",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftCompressedCharcoalBlock"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftCompressedCharcoalBlock.desc"
+		}
+	},
+	"parent": "vanillatech:main/craft_charcoal_block",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:compressed_charcoal_block",
+						"data": 0
+					}
+				]
+			}
+		}
+	}
+}

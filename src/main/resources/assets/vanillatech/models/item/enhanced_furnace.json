@@ -1,0 +1,7 @@
+{
+	"parent": "vanillatech:block/enhanced_furnace_off",
+    "overrides": [
+        { "predicate": { "lit": 0.0 }, "model": "vanillatech:block/enhanced_furnace_off" },
+        { "predicate": { "lit": 1.0 }, "model": "vanillatech:block/enhanced_furnace_on" }
+    ]
+}

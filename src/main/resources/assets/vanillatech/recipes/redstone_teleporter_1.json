@@ -1,0 +1,13 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "vanillatech:redstone_teleporter"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [ "e", "r" ],
+    "key": {
+		"e": { "ore": "enderpearl", "type": "forge:ore_dict" },
+		"r": { "item": "minecraft:repeater" }
+    },
+    "result": { "item": "vanillatech:redstone_teleporter", "count": 2 }
+}

@@ -1,0 +1,17 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "vanillatech:items/netherstar_shard/1"
+	},
+    "overrides": [
+        { "predicate": { "count": 0.0 }, "model": "vanillatech:item/netherstar_shard/1" },
+        { "predicate": { "count": 1.0 }, "model": "vanillatech:item/netherstar_shard/1" },
+        { "predicate": { "count": 2.0 }, "model": "vanillatech:item/netherstar_shard/2" },
+        { "predicate": { "count": 3.0 }, "model": "vanillatech:item/netherstar_shard/3" },
+        { "predicate": { "count": 4.0 }, "model": "vanillatech:item/netherstar_shard/4" },
+        { "predicate": { "count": 5.0 }, "model": "vanillatech:item/netherstar_shard/5" },
+        { "predicate": { "count": 6.0 }, "model": "vanillatech:item/netherstar_shard/6" },
+        { "predicate": { "count": 7.0 }, "model": "vanillatech:item/netherstar_shard/7" },
+        { "predicate": { "count": 8.0 }, "model": "vanillatech:item/netherstar_shard/8" }
+    ]
+}

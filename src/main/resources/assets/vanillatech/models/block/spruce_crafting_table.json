@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "vanillatech:blocks/spruce_crafting_table_front",
+        "down": "blocks/planks_spruce",
+        "up": "vanillatech:blocks/spruce_crafting_table_top",
+        "north": "vanillatech:blocks/spruce_crafting_table_front",
+        "east": "vanillatech:blocks/spruce_crafting_table_side",
+        "south": "vanillatech:blocks/spruce_crafting_table_side",
+        "west": "vanillatech:blocks/spruce_crafting_table_front"
+    }
+}

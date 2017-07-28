@@ -1,0 +1,26 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:witherproof_red_stone",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftWitherProofRedStone"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftWitherProofRedStone.desc"
+		},
+        "frame": "challenge"
+	},
+	"parent": "vanillatech:main/root",
+	"rewards": {
+        "experience": 100
+    },
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:impossible",
+			"conditions": {
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:backpack",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftBackpack"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftBackpack.desc"
+		}
+	},
+	"parent": "vanillatech:main/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:backpack"
+					}
+				]
+			}
+		}
+	}
+}

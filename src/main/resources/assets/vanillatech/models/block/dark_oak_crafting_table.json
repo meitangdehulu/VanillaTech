@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "vanillatech:blocks/dark_oak_crafting_table_front",
+        "down": "blocks/planks_big_oak",
+        "up": "vanillatech:blocks/dark_oak_crafting_table_top",
+        "north": "vanillatech:blocks/dark_oak_crafting_table_front",
+        "east": "vanillatech:blocks/dark_oak_crafting_table_side",
+        "south": "vanillatech:blocks/dark_oak_crafting_table_side",
+        "west": "vanillatech:blocks/dark_oak_crafting_table_front"
+    }
+}

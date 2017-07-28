@@ -1,0 +1,27 @@
+{
+	"display": {
+		"icon": {
+			"item": "vanillatech:enhanced_pickaxe",
+			"data": 0
+		},
+		"title": {
+			"translate": "advancement.vanillatech:main/craftEnhancedPickaxe"
+		},
+		"description": {
+			"translate": "advancement.vanillatech:main/craftEnhancedPickaxe.desc"
+		}
+	},
+	"parent": "vanillatech:main/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillatech:enhanced_pickaxe"
+					}
+				]
+			}
+		}
+	}
+}

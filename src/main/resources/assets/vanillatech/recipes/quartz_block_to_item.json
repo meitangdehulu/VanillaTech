@@ -1,0 +1,9 @@
+{
+    "conditions": [],
+    "type": "forge:ore_shaped",
+    "pattern": [ "c" ],
+    "key": {
+		"c": { "item": "minecraft:quartz_block", "data": 0 }
+    },
+    "result": { "item": "minecraft:quartz", "count": 4 }
+}
