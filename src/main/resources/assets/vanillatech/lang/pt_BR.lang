@@ -1,0 +1,110 @@
+itemGroup.vanillatech=Vanilla Tech
+
+
+
+tile.vanillatech:charcoal_block.name=Bloco de Carvão Vegetal
+tile.vanillatech:compressed_charcoal_block.name=Bloco Comprimido de Carvão Vegetal
+tile.vanillatech:compressed_coal_block.name=Bloco Comprimido de Carvão
+tile.vanillatech:red_stone.name=Pedra Vermelha
+tile.vanillatech:red_cobblestone.name=Pedregulho Vermelho
+tile.vanillatech:quartz_ore.name=Minério de Quartzo
+tile.vanillatech:acacia_crafting_table.name=Bancada de Trabalho de Acácia
+tile.vanillatech:birch_crafting_table.name=Bancada de Trabalho de Eucalipto
+tile.vanillatech:dark_oak_crafting_table.name=Bancada de Trabalho de Carvalho Escuro
+tile.vanillatech:jungle_crafting_table.name=Bancada de Trabalho de Madeira da Selva
+tile.vanillatech:spruce_crafting_table.name=Bancada de Trabalho de Pinheiro
+tile.vanillatech:glowstone_ore.name=Minério de Pedra Luminosa
+tile.vanillatech:witherproof_red_stone.name=Pedra Vermelha à prova de Wither
+tile.vanillatech:mossy_red_cobblestone.name=Pedra Vermelha com Musgo
+tile.vanillatech:quartz_spike.name=Espinho de Quartzo
+tile.vanillatech:netherstar_ore.name=Minério de Estrela do Nether
+tile.vanillatech:redstone_teleporter.name=Teleportador de Redstone
+tile.vanillatech:enhanced_furnace.name=Fornalha Melhorada
+tile.vanillatech:enhanced_furnace.tooltip0=Pode ser encantado.
+tile.vanillatech:unstable_metal_block.name=Bloco de Metal Instável
+tile.vanillatech:fisher.name=Pescador Automático
+tile.vanillatech:anriatphyte_block.name=Bloco de Cristais Anriatifita
+
+tile.vanillatech:flora/slimy_flower.name=Flor Grudenta
+tile.vanillatech:flora/lavender.name=Lavanda
+tile.vanillatech:flora/buttercup.name=Flor do Botão-de-Ouro
+tile.vanillatech:flora/daisy.name=Margarida
+
+
+
+item.vanillatech:shield_totem.name=Totem da Proteção
+item.vanillatech:shield_totem.tooltip0=Protege completamente o jogador contra
+item.vanillatech:shield_totem.tooltip1=qualquer dano enquanto estiver na hotbar ou na outra mão.
+item.vanillatech:creative_recipe_book.name=Livro de Receitas Criativo
+item.vanillatech:creative_recipe_book.tooltip0=Use-o para desbloquear todas as receitas conhecidas
+item.vanillatech:backpack.name=Mochila
+item.vanillatech:backpack.tooltip0=Baú Duplo Portátil
+item.vanillatech:netherstar_shard.name=Fragmento de Estrela do Nether
+item.vanillatech:enhanced_pickaxe.name=Picareta Melhorada
+item.vanillatech:unstable_metal_ingot.name=Barra de Metal Instável
+item.vanillatech:crystal_anriatphyte.name=Cristal de Anriatifita
+
+
+
+potion.effect.levitation_short=Poção da Levitação
+potion.effect.levitation_long=Poção da Levitação
+splash_potion.effect.levitation_short=Poção Arremessável da Levitação
+splash_potion.effect.levitation_long=Poção Arremessável da Levitação
+lingering_potion.effect.levitation_short=Poção Prolongada da Levitação
+lingering_potion.effect.levitation_long=Poção Prolongada da Levitação
+
+
+
+enchantment.vanillatech:auto_smelt=Auto-Queima
+enchantment.vanillatech:infernal_prediction=Preditor Infernal
+enchantment.vanillatech:repair=Auto-Reparo
+
+
+
+death.attack.vanillatech:quartz_spike=%s estava em pé sobre um espinho de Quartzo.
+death.attack.vanillatech:unstable_block_form=%s foi desestabilizado.
+death.attack.vanillatech:nether_star_dissolve=%s foi dissolvido.
+death.attack.vanillatech:anriatphyte_block=%s foi morto pela Energia de Anriatifita.
+
+
+
+advancement.vanillatech:main/root=Vanilla Tech
+advancement.vanillatech:main/root.desc=Expande o Minecraft com as peças que faltam
+
+advancement.vanillatech:main/craftBackpack=Expandindo o inventário!
+advancement.vanillatech:main/craftBackpack.desc=Crie uma mochila
+
+advancement.vanillatech:main/craftCoalBlock=Esquentando as coisas!
+advancement.vanillatech:main/craftCoalBlock.desc=Crie um bloco de Carvão
+
+advancement.vanillatech:main/craftCharcoalBlock=Calor ecológico!
+advancement.vanillatech:main/craftCharcoalBlock.desc=Crie um bloco de Carvão Vegetal
+
+advancement.vanillatech:main/craftCompressedCoalBlock=Esquentando mais ainda!
+advancement.vanillatech:main/craftCompressedCoalBlock.desc=Crie um bloco comprimido de Carvão
+
+advancement.vanillatech:main/craftCompressedCharcoalBlock=Calor ainda mais ecológico!
+advancement.vanillatech:main/craftCompressedCharcoalBlock.desc=Crie um bloco comprimido de Carvão Vegetal
+
+advancement.vanillatech:main/craftShieldTotem=Como um Deus!
+advancement.vanillatech:main/craftShieldTotem.desc=Crie um Totem da Proteção e se torne invencível
+
+advancement.vanillatech:main/craftWitherProofRedStone=Contenha a destruição!
+advancement.vanillatech:main/craftWitherProofRedStone.desc=Crie uma Pedra-Vermelha á prova de Wither para conter o Wither dentro de uma caixa
+
+advancement.vanillatech:main/craftEnhancedPickaxe=Quebra-quebra!
+advancement.vanillatech:main/craftEnhancedPickaxe.desc=Crie uma Picareta Melhorada usando fragmentos de Estrela do Nether, gravetos e uma picareta de diamante
+
+advancement.vanillatech:main/makeUnstableMetalBlock=KABOOM!!
+advancement.vanillatech:main/makeUnstableMetalBlock.desc=Crie um bloco de Metal Instável derrubando um fragemento de Estrela do Nether em cima de um bloco de ferro e causando uma explosão
+
+
+
+advancement.vanillatech:flora/root=Vanilla Tech: Reino Floral
+advancement.vanillatech:flora/root.desc=Lindas Flores!
+
+advancement.vanillatech:flora/breakSlimyFlower=Situação grudenta!
+advancement.vanillatech:flora/breakSlimyFlower.desc=Encontre e colha uma flor grudenta
+
+advancement.vanillatech:flora/collectAllFlowers=Todos os aromas!
+advancement.vanillatech:flora/collectAllFlowers.desc=Colha todas as flores do Vanilla Tech
