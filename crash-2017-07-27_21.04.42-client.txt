@@ -1,0 +1,374 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ForgelinPlugin (Forgelin-1.5.1.jar)
+  SFRCore (SolarFluxReborn_1.12-3.25r.jar)
+  Do not report to Forge! Remove FoamFixAPI (or replace with FoamFixAPI-Lawful) and try again. (foamfix-0.7.3-1.12-anarchy.jar)
+  OpenEyePlugin (OpenEye-1.12-0.8.jar)
+  MovingWorldCoreMod (movingworld-1.12-4.340-full.jar)
+  CTMCorePlugin (CTM-MC1.12-0.2.0.3.jar)
+  CoreMod (Aroma1997Core-1.12-1.3.0.0.b94.jar)
+  ShetiPhian-ASM (shetiphiancore-1.12.0-3.5.0.2.jar)
+  FullscreenFix (gud_fullscreen_fix-1.0.2.jar)
+  LoadingPlugin (Quark-r1.2-102.jar)
+  Inventory Tweaks Coremod (InventoryTweaks-1.63+beta.107.jar)
+  BlurPlugin (Blur-1.0.3-13.jar)
+  HammerCoreCore (HammerCore-1.12-1.9.3.6.jar)
+  Plugin (NotEnoughIDs-1.5.4.1.jar)
+Contact their authors BEFORE contacting forge
+
+// You're mean.
+
+Time: 7/27/17 9:04 PM
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.getNetwork(PowerCellTileEntity.java:156)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.receiveEnergyMulti(PowerCellTileEntity.java:481)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.receiveEnergyFacing(PowerCellTileEntity.java:470)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity$1.receiveEnergy(PowerCellTileEntity.java:731)
+	at com.pengu.solarfluxreborn.te.cable.TileAbstractCable.tick(TileAbstractCable.java:100)
+	at com.pengu.solarfluxreborn.te.cable.TileCustomCable.tick(TileCustomCable.java:38)
+	at com.pengu.hammercore.tile.TileSyncableTickable.func_73660_a(TileSyncableTickable.java:47)
+	at net.minecraft.world.World.func_72939_s(World.java:1807)
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1846)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1096)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:397)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.getNetwork(PowerCellTileEntity.java:156)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.receiveEnergyMulti(PowerCellTileEntity.java:481)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity.receiveEnergyFacing(PowerCellTileEntity.java:470)
+	at mcjty.rftools.blocks.powercell.PowerCellTileEntity$1.receiveEnergy(PowerCellTileEntity.java:731)
+	at com.pengu.solarfluxreborn.te.cable.TileAbstractCable.tick(TileAbstractCable.java:100)
+	at com.pengu.solarfluxreborn.te.cable.TileCustomCable.tick(TileCustomCable.java:38)
+	at com.pengu.hammercore.tile.TileSyncableTickable.func_73660_a(TileSyncableTickable.java:47)
+
+-- Block entity being ticked --
+Details:
+	Name: solarfluxreborn:cable_custom // com.pengu.solarfluxreborn.te.cable.TileCustomCable
+	Block type: ID #938 (tile.solarfluxreborn:wire_3 // com.pengu.solarfluxreborn.blocks.BlockCable320000)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (-5,77,-979), Chunk: (at 11,4,13 in -1,-62; contains blocks -16,0,-992 to -1,255,-977), Region: (-1,-2; contains chunks -32,-64 to -1,-33, blocks -512,0,-1024 to -1,255,-513)
+	Actual block type: ID #938 (tile.solarfluxreborn:wire_3 // com.pengu.solarfluxreborn.blocks.BlockCable320000)
+	Actual block data value: 0 / 0x0 / 0b0000
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1807)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 2 total; [EntityPlayerSP['swh65458'/164297, l='MpServer', x=-70.21, y=87.00, z=-983.60], EntityOtherPlayerMP['eelusm'/183770, l='MpServer', x=-0.63, y=77.00, z=-976.03]]
+	Chunk stats: MultiplayerChunkCache: 289, 289
+	Level seed: 0
+	Level generator: ID 11 - voidworld, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (0,88,0), Chunk: (at 0,5,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 12658797 game time, 47609793102 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 7 total; [EntityOtherPlayerMP['eelusm'/183770, l='MpServer', x=-0.63, y=77.00, z=-976.03], EntityOtherPlayerMP['eelusm'/183770, l='MpServer', x=-0.63, y=77.00, z=-976.03], EntityPlayerSP['swh65458'/164297, l='MpServer', x=-70.21, y=87.00, z=-983.60], EntityItemFrame['Item Frame'/164670, l='MpServer', x=-53.97, y=86.50, z=-955.50], EntityDog['doge'/164671, l='MpServer', x=-52.64, y=85.00, z=-954.70], EntityOcelot['Benny'/110, l='MpServer', x=-40.48, y=87.00, z=-953.20], EntityOcelot['Louis'/111, l='MpServer', x=-41.08, y=85.06, z=-954.54]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2737)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:418)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_141, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1933303824 bytes (1843 MB) / 4294967296 bytes (4096 MB) up to 4294967296 bytes (4096 MB)
+	JVM Flags: 12 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx4096m -Xms256m -XX:PermSize=256m -XX:+UseG1GC -Xmx4G -Xms4G -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.40 Powered by Forge 14.21.1.2424 194 mods loaded, 193 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJA	minecraft{1.12} [Minecraft] (minecraft.jar) 
+	UCHIJA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJA	FML{8.0.99.99} [Forge Mod Loader] (forge-1.12-14.21.1.2424.jar) 
+	UCHIJA	forge{14.21.1.2424} [Minecraft Forge] (forge-1.12-14.21.1.2424.jar) 
+	UCHIJA	aroma1997core{1.3.0.0.b94} [Aroma1997Core] (Aroma1997Core-1.12-1.3.0.0.b94.jar) 
+	UCHIJA	gud_fullscreen_fix{} [Fullscreen Fix] (minecraft.jar) 
+	UCHIJA	OpenEye{0.8} [OpenEye] (OpenEye-1.12-0.8.jar) 
+	UCHIJA	com.elytradev.movingworld.common.asm.coremod{} [MovingWorld CORE] (minecraft.jar) 
+	UCHIJA	foamfixcore{7.7.4} [FoamFixCore] (minecraft.jar) 
+	UCHIJA	actuallyadditions{1.12-r116} [Actually Additions] (ActuallyAdditions-1.12-r116.jar) 
+	UCHIJA	anima{0.2.1} [Anima Mundi] (anima-1.12-0.2.1.jar) 
+	UCHIJA	tammodized{0.13.7} [TamModized] (TamModized-1.12-0.13.7.jar) 
+	UCHIJA	aov{0.4.1} [Angel of Vengeance] (AoV-1.12-0.4.1.jar) 
+	UCHIJA	jei{4.7.2.77} [Just Enough Items] (jei_1.12-4.7.2.77.jar) 
+	UCHIJA	appleskin{1.0.7} [AppleSkin] (AppleSkin-mc1.12-1.0.7.jar) 
+	UCHIJA	forgelin{1.5.1} [Shadowfacts' Forgelin] (Forgelin-1.5.1.jar) 
+	UCHIJA	mantle{1.12-1.3.0.15} [Mantle] (Mantle-1.12-1.3.0.15.jar) 
+	UCHIJA	chisel{MC1.12-0.0.13.14} [Chisel] (Chisel-MC1.12-0.0.13.14.jar) 
+	UCHIJA	tconstruct{1.12-2.7.1.9} [Tinkers' Construct] (TConstruct-1.12-2.7.1.9.jar) 
+	UCHIJA	thedragonlib{1.12-4.1.0} [TheDragonLib] (thedragonlib-1.12-4.1.0.jar) 
+	UCHIJA	armorplus{1.12-11.3.6.13-alpha} [ArmorPlus] (armorplus-1.12-11.3.6.13-alpha.jar) 
+	UCHIJA	aroma1997corehelper{1.3.0.0.b94} [Aroma1997Core|Helper] (Aroma1997Core-1.12-1.3.0.0.b94.jar) 
+	UCHIJA	aromabackup{2.1.0.0.b71} [AromaBackup] (AromaBackup-1.12-2.1.0.0.b71.jar) 
+	UCHIJA	aromabackuprecovery{2.1.0.0.b71} [AromaBackuprecovery] (AromaBackup-1.12-2.1.0.0.b71.jar) 
+	UCHIJA	attaineddrops2{3.5.1} [Attained Drops 2] (Attained Drops-1.12-3.5.1.jar) 
+	UCHIJA	psi{r1.1-52} [Psi] (Psi-r1.1-52.jar) 
+	UCHIJA	quark{r1.2-102} [Quark] (Quark-r1.2-102.jar) 
+	UCHIJA	autoreglib{1.3-13} [AutoRegLib] (AutoRegLib-1.3-13.jar) 
+	UCHIJA	babyanimals{1.11-2} [Baby Animals Model Swapper] (BabyAnimals-1.11-2.jar) 
+	UCHIJA	betterthanmending{1.1.1} [Better Than Mending] (BetterThanMending-1.1.1.jar) 
+	UCHIJA	bibliocraft{2.4.2} [BiblioCraft] (BiblioCraft[v2.4.2][MC1.12.0].jar) 
+	UCHIJA	biomesoplenty{7.0.0.2291} [Biomes O' Plenty] (BiomesOPlenty-1.12-7.0.0.2291-universal.jar) 
+	UCHIJA	birdsfoods{2.4.2 [1.12]} [Bird's Foods] (birdsfoods-1.12 - 2.4.2.jar) 
+	UCHIJA	hammercore{1.9.3.6} [Hammer Core] (HammerCore-1.12-1.9.3.6.jar) 
+	UCHIJA	blackholestorage{17r} [Black Hole Storage] (BlackHoleStorage-1.12-17r.jar) 
+	UCHIJA	blur{1.0.3-13} [Blur] (Blur-1.0.3-13.jar) 
+	UCHIJA	bookshelf{2.0.416} [Bookshelf] (Bookshelf-1.12-2.0.0.416.jar) 
+	UCHIJA	chameleon{1.12-4.1.3} [Chameleon] (Chameleon-1.12-4.1.3.jar) 
+	UCHIJA	chesttransporter{2.8.3} [Chest Transporter] (ChestTransporter-1.12-2.8.3.jar) 
+	UCHIJA	chiselsandbits{14.2} [Chisels & Bits] (chiselsandbits-14.2.jar) 
+	UCHIJA	clarity{1.0} [Clarity] (clarity-1.0.jar) 
+	UCHIJA	claybucket{1.0} [Clay Bucket] (ClayBucket-1.12-1.0.jar) 
+	UCHIJA	cleanview{1.10.2-v1} [CleanView] (CleanView-1.10.2-v1.jar) 
+	UCHIJA	codechickenlib{3.1.1.288} [CodeChicken Lib] (CodeChickenLib-1.12-3.1.1.288-universal.jar) 
+	UCHIJA	redstoneflux{2.0.1} [Redstone Flux] (RedstoneFlux-1.12-2.0.1.2-universal.jar) 
+	UCHIJA	cofhcore{4.3.3} [CoFH Core] (CoFHCore-1.12-4.3.3.11-universal.jar) 
+	UCHIJA	cofhworld{1.0.0} [CoFH World] (CoFHWorld-1.12-1.0.0.6-universal.jar) 
+	UCHIJA	pillar_extension_biomesoplenty{3.0.0} [Corail Pillar - Biomes O'Plenty Extension] (corail_pillar_extension_biomesoplenty-3.0.0-1.12.0.jar) 
+	UCHIJA	creeperconfetti{1.4.1} [Creeper Confetti] (creeperconfetti-1.4.1.jar) 
+	UCHIJA	ctdcore{1.1.6} [CTD Core] (CTD Core-1.12-1.1.6.jar) 
+	UCHIJA	ctdpaint{2.0.4} [CTD Paint] (CTD Paint-1.12-2.0.4.jar) 
+	UCHIJA	ctm{MC1.12-0.2.0.3} [CTM] (CTM-MC1.12-0.2.0.3.jar) 
+	UCHIJA	waila{1.8.19} [Waila] (Hwyla-1.8.19-B33_1.12.jar) 
+	UCHIJA	darkutils{1.6.167} [Dark Utilities] (DarkUtils-1.12-1.6.167.jar) 
+	UCHIJA	movingworld{1.12-4.340} [Moving World] (movingworld-1.12-4.340-full.jar) 
+	UCHIJA	davincisvessels{@DVESSELSVER@} [Davinci's Vessels] (davincisvessels-1.12-4.334-full.jar) 
+	UCHIJA	dirt2path{1.7.0} [Dirt2Path] (dirt2path-1.7.0.jar) 
+	UCHIJA	doggytalents{v1.13.3c} [Doggy Talents] (DoggyTalents-1.12-v1.13.3c-universal.jar) 
+	UCHIJA	dungeondq{10.00} [DungeonDQ] (DungeonDQ_Ver10.00_[MC1.12](forge-1.12-14.21.1.2387).jar) 
+	UCHIJA	durabilityshow{5.0.0} [Durability Show] (Durability Show-1.12-5.0.0.jar) 
+	UCHIJA	earthworks{1.3.4.3} [Earthworks] (Earthworks-1.12-1.3.4.3.jar) 
+	UCHIJA	eggs{1.0} [Eat the Eggs!] (EM3R50N-EatTheEggs-1.12-14.21.1.2387.jar) 
+	UCHIJA	logicaldrops{0.9.4} [Logical Drops] (EM3R50N-LogicalDrops-1.12-14.21.1.2387.jar) 
+	UCHIJA	csb_ench_table{1.1.2-beta2} [Lapis Stays in the Enchanting Table] (EnchantingTable-1.12-1.1.2-beta2.jar) 
+	UCHIJA	endercrop{1.12-1.3.4} [Ender Crop] (endercrop-1.12-1.3.4.jar) 
+	UCHIJA	enderfuge{1.1.8.1} [Enderfuge] (Enderfuge-1.12-1.1.8.1.jar) 
+	UCHIJA	shetiphiancore{3.5.0.2} [ShetiPhian-Core] (shetiphiancore-1.12.0-3.5.0.2.jar) 
+	UCHIJA	endertanks{1.6.0.2} [EnderTanks] (endertanks-1.12.0-1.6.0.2.jar) 
+	UCHIJA	enderutilities{0.7.2} [Ender Utilities] (enderutilities-1.12.0-0.7.2.jar) 
+	UCHIJA	thermalfoundation{2.3.3} [Thermal Foundation] (ThermalFoundation-1.12-2.3.3.10-universal.jar) 
+	UCHIJA	thermalexpansion{5.3.3} [Thermal Expansion] (ThermalExpansion-1.12-5.3.3.15-universal.jar) 
+	UCHIJA	exchangers{1.12-2.2} [Exchangers] (Exchangers-1.12-2.2.jar) 
+	UCHIJA	exparvis{0.3.4} [Ex Parvis] (exparvis-1.12-0.3.4.jar) 
+	UCHIJA	shadowmc{3.8.0} [ShadowMC] (ShadowMC-1.12-3.8.0.jar) 
+	UCHIJA	extrarails{1.3.0} [Extra Rails] (ExtraRails-1.12-1.3.0.jar) 
+	UCHIJA	extrautils2{1.0} [Extra Utilities 2] (extrautils2-1.12-1.5.1.jar) 
+	UCHIJA	zerocore{1.12-0.1.0.9} [Zero CORE] (zerocore-1.12-0.1.0.9.jar) 
+	UCHIJA	bigreactors{1.12-0.4.5.34} [Extreme Reactors] (ExtremeReactors-1.12-0.4.5.34.jar) 
+	UCHIJA	fastfood{0.2.22050900} [Fast Food] (FastFood-0.2.22050900.jar) 
+	UCHIJA	flatcoloredblocks{mc1.12-6.3} [Flat Colored Blocks] (flatcoloredblocks-mc1.12-6.3.jar) 
+	UCHIJA	limelib{1.7.4} [LimeLib] (limelib-1.12-1.7.4.jar) 
+	UCHIJA	flexibletools{1.2.1} [Flexible Tools] (flexibletools-1.12-1.2.1.jar) 
+	UCHIJA	floricraft{4.2.2} [Floricraft] (Floricraft-1.12-4.2.2.jar) 
+	UCHIJA	foamfix{@VERSION@} [FoamFix] (foamfix-0.7.3-1.12-anarchy.jar) 
+	UCHIJA	forestry{5.4.3.137} [Forestry] (forestry_1.12-5.4.3.137.jar) 
+	UCHIJA	friendlyfire{1.5.5} [Friendly Fire] (FriendlyFire-1.12-1.5.5.jar) 
+	UCHIJA	funkylocomotion{1.0} [Funky Locomotion] (funky-locomotion-1.12-alpha-0.0.1.jar) 
+	UCHIJA	silentlib{2.2.6} [Silent Lib] (SilentLib-1.12-2.2.6-83.jar) 
+	UCHIJA	funores{1.5.5} [Fun Ores] (FunOres-1.12-1.5.5-113.jar) 
+	UCHIJA	furnus{2.1.1} [Furnus] (furnus-1.12-2.1.1.jar) 
+	UCHIJA	glaretorch{8.10} [GlareTorch] (GlareTorch_Ver.8.11_[MC1.12](forge-1.12-14.21.1.2387).jar) 
+	UCHIJA	gwgmcgenmod{1.4} [gmCGENmod] (gmcgenmod-mc1.12-v1.4.jar) 
+	UCHIJA	improvedbackpacks{1.12-1.1.2.0} [Improved Backpacks] (ImprovedBackpacks-1.12-1.1.2.0.jar) 
+	UCHIJA	infinitefluids{1.1.1} [InfiniteFluids] (infinitefluids-1.11-1.1.1.jar) 
+	UCHIJA	inventorytweaks{1.63+beta.107.015dbec} [Inventory Tweaks] (InventoryTweaks-1.63+beta.107.jar) 
+	UCHIJA	ironchest{1.12-7.0.31.818} [Iron Chest] (ironchest-1.12-7.0.31.818.jar) 
+	UCHIJA	itemscroller{0.11.0} [Item Scroller] (itemscroller-1.12.0-0.11.0.jar) 
+	UCHIJA	itorch{1.1.7} [iTorch] (itorch-1.1.7.jar) 
+	UCHIJA	japaricraftmod{2.5.5} [JapariCraftMod] (japaricraftmod-1.12-2.5.5.jar) 
+	UCHIJA	jepb{1.2} [Just Enough Pattern Banners] (jepb-1.12-1.2.jar) 
+	UCHIJA	journeymap{1.12-5.4.9} [JourneyMap] (journeymap-1.12-5.4.9.jar) 
+	UCHIJA	justenoughbuttons{1.12-1.2.1} [Just Enough Buttons] (justenoughbuttons-1.12-1.2.1.jar) 
+	UCHIJA	jeresources{0.8.3.23} [Just Enough Resources] (JustEnoughResources-1.12-0.8.3.23.jar) 
+	UCHIJA	kleeslabs{5.3.2} [KleeSlabs] (KleeSlabs_1.12-5.3.2.jar) 
+	UCHIJA	llor{1.1.4-mc1.12} [Light Level Overlay Reloaded] (LLOverlayReloaded-1.1.4-mc1.12.jar) 
+	UCHIJA	lostcities{0.0.19beta} [The Lost Cities] (lostcities-1.12-0.0.19beta.jar) 
+	UCHIJA	magicalmap{2.2.0} [Magical Map] (Magical Map-1.12-2.2.0.jar) 
+	UCHIJA	mcmultipart{2.2.2} [MCMultiPart] (MCMultiPart-2.2.2.jar) 
+	UCHIJA	minecolonies{1.12-0.8.3238} [MineColonies] (minecolonies-universal-1.12-0.8.3238.jar) 
+	UCHIJA	moglowstone{1.2.9} [Mo' Glowstone] (Mo-Glowstone-1.12-1.2.9.jar) 
+	UCHIJA	modlister{1.12-3.2.3} [ModLister] (ModLister-1.12-3.2.3.jar) 
+	UCHIJA	modnametooltip{1.8.1} [Mod Name Tooltip] (modnametooltip_1.12-1.8.1.jar) 
+	UCHIJA	morpheus{1.12-3.3.2} [Morpheus] (Morpheus-1.12-3.3.2.jar) 
+	UCHIJA	mousetweaks{2.8} [Mouse Tweaks] (MouseTweaks-2.8-mc1.12.jar) 
+	UCHIJA	multistorage{1.4.0.2} [Multi-Storage] (multistorage-1.12.0-1.4.0.2.jar) 
+	UCHIJA	musiccraft{3.2.3} [MusicCraft] (MusicCraft-3.2.3.jar) 
+	UCHIJA	mysticalagriculture{1.6.1} [Mystical Agriculture] (mysticalagriculture[1.12]-1.6.1a.jar) 
+	UCHIJA	mysticalagradditions{1.2.0} [Mystical Agradditions] (mysticalagradditions[1.12]-1.2.0.jar) 
+	UCHIJA	nex{2.1.8.9} [NetherEx] (NetherEx-1.12-2.1.8.9.jar) 
+	UCHIJA	netherportalfix{1.0} [NetherPortalFix] (NetherPortalFix_1.12-5.3.1.jar) 
+	UCHIJA	nice{0.1.0} [Nice] (nice-1.12-0.1.0.jar) 
+	UCHIJA	nofov{1.0.1} [No FOV] (NoFov-MC1.12-1.0.1.jar) 
+	UCHIJA	neid{1.5.4.1} [NotEnoughIDs] (NotEnoughIDs-1.5.4.1.jar) 
+	UCHIJA	notenoughwands{1.5.9} [Not Enough Wands] (notenoughwands-1.12-1.5.9.jar) 
+	UCHIJA	oldbeacon{1.0} [Old Beacon] (oldbeacon-1.12.jar) 
+	UCHIJA	openglider{@VERSION@} [Open Glider] (OpenGlider-1.12-1.0.1.jar) 
+	UCHIJA	packingtape{0.7.4} [Packing Tape] (PackingTape-1.12.0-0.7.4.jar) 
+	UCHIJA	peacefulsurface{1.12-v1} [PeacefulSurface] (PeacefulSurface-1.12-v1.jar) 
+	UCHIJA	rftools{6.12} [RFTools] (rftools-1.12-6.12.jar) 
+	UCHIJA	rftoolsdim{5.04} [RFTools Dimensions] (rftoolsdim-1.12-5.04.jar) 
+	UCHIJA	persistentbits{1.0.6a} [Persistent Bits] (PersistentBits-1.12-1.0.6a.jar) 
+	UCHIJA	personalcars{1.3} [Personal Cars] (PersonalCars-1.3.jar) 
+	UCHIJA	plants{1.2.0} [Plants] (Plants-1.12-1.2.0.jar) 
+	UCHIJA	tesla{1.0.61} [TESLA] (Tesla-1.12-1.0.61.jar) 
+	UCHIJA	plustic{6.0.0.3} [PlusTiC] (plustic-6.0.0.3.jar) 
+	UCHIJA	pocketnether{2.5} [Pocket Nether Link] (PocketNetherLink-1.12-2.5.jar) 
+	UCHIJA	potionbears{1.0} [Potion Bears] (potionbears 1.0 [1.12].jar) 
+	UCHIJA	reborncore{3.2.5.88} [Reborn Core] (RebornCore-1.12-3.2.5.88-universal.jar) 
+	UCHIJA	quantumstorage{4.3.5} [QuantumStorage] (QuantumStorage-1.12-4.3.5.jar) 
+	UCHIJA	quickleafdecay{1.2.3} [Quick Leaf Decay] (QuickLeafDecay-MC1.12-1.2.3.jar) 
+	UCHIJA	rainboaks{1.0.4-beta2} [Rainbow Oak Trees] (RainbowOaks-1.12-1.0.4-beta2.jar) 
+	UCHIJA	randomutilities{5.0.1} [Random Utilities] (Random Utilities-1.12-5.0.1.jar) 
+	UCHIJA	rangedpumps{0.5} [Ranged Pumps] (rangedpumps-0.5.jar) 
+	UCHIJA	reauth{3.5.1} [ReAuth] (ReAuth-3.5.1.jar) 
+	UCHIJA	recycler{1.4.8} [Corail Recycleur] (recycler-1.4.8-1.12.0.jar) 
+	UCHIJA	redstonearsenal{2.3.3} [Redstone Arsenal] (RedstoneArsenal-1.12-2.3.3.11-universal.jar) 
+	UCHIJA	redstoneremote{@VERSION@} [Redstone Remote] (RedstoneRemote-1.12-1.1.0.jar) 
+	UCHIJA	refinedrelocation{4.1.4} [Refined Relocation] (RefinedRelocation_1.12-4.1.4.jar) 
+	UCHIJA	storagedrawers{1.12-5.2.5} [Storage Drawers] (StorageDrawers-1.12-5.2.9.jar) 
+	UCHIJA	refinedstorage{1.5.13} [Refined Storage] (refinedstorage-1.5.13.jar) 
+	UCHIJA	refinedstorageaddons{0.1.1} [Refined Storage Addons] (refinedstorageaddons-0.1.1.jar) 
+	UCHIJA	rflux{0.1.1} [RF Lux] (rflux-1.12-0.1.1.jar) 
+	UCHIJA	shulkerbox{1.2.1} [Shulkerbox] (shulkerbox-1.2.1.jar) 
+	UCHIJA	icc{0.2.1} [Simple Item Collector Chest] (Simple Item Collector Chest-0.2.1.jar) 
+	UCHIJA	simplegrinder{4.015.A112} [Simple Grinder] (SimpleGrinder-4.052.R112.jar) 
+	UCHIJA	simpleharvest{1.07} [Simple Harvest] (simpleharvest-1.07.jar) 
+	UCHIJA	skyresources{2.0.18} [Sky Resources 2] (skyresources-2.0.18.jar) 
+	UCHIJA	solarfluxreborn{3.25r} [Solar Flux Reborn] (SolarFluxReborn_1.12-3.25r.jar) 
+	UCHIJA	yukarilib{1.3.0} [YukariLib] (YukariLib-1.12-1.3.0.jar) 
+	UCHIJA	solidxp{1.4.0-beta} [SolidXp] (SolidXp-1.4.0-b2.jar) 
+	UCHIJA	soulshardstow{1.12-2.7.3-52} [Soul Shards - The Old Ways] (SoulShards-TOW-1.12-2.7.3-52.jar) 
+	UCHIJA	stacksize{1.0} [Stacksize Mod] (stacksize-1.12-1.0.jar) 
+	UCHIJA	statues{0.7.1.1} [Statues mod] (statues-0.7.1.1.jar) 
+	UCHIJA	stevescarts{${version}} [Steve's Carts 2] (StevesCarts-1.12-2.4.5.29.jar) 
+	UCHIJA	stg{1.12-1.2.0} [SwingThroughGrass] (stg-1.12-1.2.0.jar) 
+	UCHIJA	storagedrawersextra{@VERSION@} [Storage Drawers Extras] (StorageDrawersExtras-1.12-3.1.0.jar) 
+	UCHIJA	teslacorelib{1.12-1.0.5} [Tesla Core Lib] (tesla-core-lib-1.12-1.0.5.jar) 
+	UCHIJA	teslathingies{@VERSION@} [Tesla Powered Thingies] (teslathingies-1.12-1.0.5.jar) 
+	UCHIJA	thermalcultivation{0.1.0} [Thermal Cultivation] (ThermalCultivation-1.12-0.1.0.5-universal.jar) 
+	UCHIJA	thermaldynamics{2.3.3} [Thermal Dynamics] (ThermalDynamics-1.12-2.3.3.10-universal.jar) 
+	UCHIJA	tombstone{1.2.8} [Corail Tombstone] (tombstone-1.2.8-1.12.0.jar) 
+	UCHIJA	tpmod{1.12-0.2} [Torch Place Mod] (TorchPlaceMod-1.12-0.2.jar) 
+	UCHIJA	toroquest{1.11.2-5.1} [ToroQuest] (toroquest-1.12-5.2.jar) 
+	UCHIJA	treechopper{1.2.1} [Tree Chopper] (TreeChopper-1.12-1.2.1.jar) 
+	UCHIJA	treegrowingsimulator{0.0.4} [Tree Growing Simulator 2016] (TreeGrowingSimulator2017-1.0.1.jar) 
+	UCHIJA	tumbleweed{1.11-0.4.2} [Tumbleweed] (tumbleweed-1.11-0.4.2.jar) 
+	UCHIJA	utilityworlds{1.1.0} [Utility Worlds] (UtilityWorlds-1.12_1.1.0.jar) 
+	UCHIJA	veinminer{0.36.0} [Vein Miner] (VeinMiner-1.12-0.36.0.623+cd640ee.jar) 
+	UCHIJA	veinminermodsupport{0.36.0} [Mod Support] (VeinMiner-1.12-0.36.0.623+cd640ee.jar) 
+	UCHIJA	voidislandcontrol{1.2.4} [Void Island Control] (voidislandcontrol-1.2.4.jar) 
+	UCHIJA	waddles{0.5.3} [Waddles] (Waddles-1.12-0.5.3.jar) 
+	UCHIJA	wailaharvestability{1.1.11} [Waila Harvestability] (WailaHarvestability-mc1.12-1.1.11.jar) 
+	UCHIJA	waterstrainer{3.1.1} [Water Strainer] (WaterStrainer-1.12-3.1.1.jar) 
+	UCHIJA	wawla{2.5.239} [What Are We Looking At] (Wawla-1.12-2.5.239.jar) 
+	UCHIJA	waystones{4.0.5} [Waystones] (Waystones_1.12-4.0.5.jar) 
+	UCHIJA	witherskelefix{2.2.2} [Wither Skeleton Tweaks] (Wither Skeleton Tweaks-1.12-2.2.2.jar) 
+	UCHIJA	wts{1.1.0} [What's That Slot] (WTS-1.1.0.jar) 
+	UCHIJA	xnet{1.3.5} [XNet] (xnet-1.12-1.3.5.jar) 
+	UCHIJA	xtones{1.12-1.0.4-7} [Xtones] (Xtones-1.12-1.0.4-7.jar) 
+	UCHIJA	corail_pillar{3.1.0} [Corail Pillar] (corail_pillar-3.1.0-1.12.0.jar) 
+	UCHIJA	gravelores{1.5} [Gravel Ores] (gravelores-1.5.jar) 
+	UCHIJA	jsonrecipemanager{1.0.2} [JSON Recipe Manager] (jsonrecipemanager-1.0.2.jar) 
+	UCHIJA	teslacoreregistries{1.12-1.0.5} [Tesla Core Registries] (tesla-core-lib-1.12-1.0.5.jar) 
+	UD	solarfluxreborncore{3.25r} [Solar Flux Reborn: Core] (minecraft.jar) 
+	Loaded coremods (and transformers): 
+ForgelinPlugin (Forgelin-1.5.1.jar)
+  
+SFRCore (SolarFluxReborn_1.12-3.25r.jar)
+  com.pengu.solarfluxreborn.core.SFRSerializedTransformer
+Do not report to Forge! Remove FoamFixAPI (or replace with FoamFixAPI-Lawful) and try again. (foamfix-0.7.3-1.12-anarchy.jar)
+  pl.asie.foamfix.coremod.FoamFixTransformer
+OpenEyePlugin (OpenEye-1.12-0.8.jar)
+  openeye.asm.MultiTransformer
+MovingWorldCoreMod (movingworld-1.12-4.340-full.jar)
+  
+CTMCorePlugin (CTM-MC1.12-0.2.0.3.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+CoreMod (Aroma1997Core-1.12-1.3.0.0.b94.jar)
+  
+ShetiPhian-ASM (shetiphiancore-1.12.0-3.5.0.2.jar)
+  shetiphian.asm.ClassTransformer
+FullscreenFix (gud_fullscreen_fix-1.0.2.jar)
+  net.gudenau.fullscreenfix.Transformer
+LoadingPlugin (Quark-r1.2-102.jar)
+  vazkii.quark.base.asm.ClassTransformer
+Inventory Tweaks Coremod (InventoryTweaks-1.63+beta.107.jar)
+  invtweaks.forge.asm.ContainerTransformer
+BlurPlugin (Blur-1.0.3-13.jar)
+  com.tterrag.blur.BlurTransformer
+HammerCoreCore (HammerCore-1.12-1.9.3.6.jar)
+  com.pengu.hammercore.asm.HammerCoreTransformer
+Plugin (NotEnoughIDs-1.5.4.1.jar)
+  ru.fewizz.neid.asm.Transformer
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.5.13476 Compatibility Profile Context 22.19.171.1024' Renderer: 'AMD Radeon R9 200 / HD 7900 Series'
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- chiselIntegration (Enabled/Not Forced)
+		- chiselsandbitsIntegration (Enabled/Not Forced)
+
+	RebornCore: 
+		Plugin Engine: 0
+		RebornCore Version: 3.2.5.88
+		Runtime Debofucsation 1
+		RenderEngine: 0
+	Launched Version: forge-14.21.1.2424
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon R9 200 / HD 7900 Series GL version 4.5.13476 Compatibility Profile Context 22.19.171.1024, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: Default Improved 1.12.zip
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
