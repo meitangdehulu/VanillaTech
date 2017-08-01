@@ -1,0 +1,112 @@
+itemGroup.vanillatech=Vanilla Tech
+
+
+
+tile.vanillatech:charcoal_block.name=Holzkohleblock
+tile.vanillatech:compressed_charcoal_block.name=Komprimierter Holzkohleblock
+tile.vanillatech:compressed_coal_block.name=Komprimierter Kohleblock
+tile.vanillatech:red_stone.name=Red Rock
+tile.vanillatech:red_cobblestone.name=Roter Pflasterstein
+tile.vanillatech:quartz_ore.name=Quarzerz
+tile.vanillatech:acacia_crafting_table.name=Akazienwerkbank
+tile.vanillatech:birch_crafting_table.name=Birkenwerkbank
+tile.vanillatech:dark_oak_crafting_table.name=Dunkeleichenwerkbank
+tile.vanillatech:jungle_crafting_table.name=Junglewerkbank
+tile.vanillatech:spruce_crafting_table.name=Fichtenwerkbank
+tile.vanillatech:glowstone_ore.name=Glowstoneerz
+tile.vanillatech:witherproof_red_stone.name=Witherresitenter Block
+tile.vanillatech:mossy_red_cobblestone.name=moosiger roter Pflasterstein
+tile.vanillatech:quartz_spike.name=Quarzstachel
+tile.vanillatech:netherstar_ore.name=Nethersternerz
+tile.vanillatech:redstone_teleporter.name=Redstone Reciesender
+tile.vanillatech:enhanced_furnace.name=Verbesserter Ofen
+tile.vanillatech:enhanced_furnace.tooltip0=Kann verbessert werden.
+tile.vanillatech:unstable_metal_block.name=Block aus instabilem Metall.
+tile.vanillatech:fisher.name=Auto-Fischer
+tile.vanillatech:anriatphyte_block.name=Anyriaphytischer Kristallbock
+
+tile.vanillatech:flora/slimy_flower.name=Schleimige Blume
+tile.vanillatech:flora/lavender.name=Lavendel
+tile.vanillatech:flora/buttercup.name=Hahnenfuß
+tile.vanillatech:flora/daisy.name=Gänsefüßchen
+
+
+
+item.vanillatech:shield_totem.name=Schildtotem
+item.vanillatech:shield_totem.tooltip0=Beschützt den Spieler vor jeglicher
+item.vanillatech:shield_totem.tooltip1=Art von Schaden wenn in Zweithand oder in der Hotbar.
+item.vanillatech:creative_recipe_book.name=Kreatives Rezeptbuch
+item.vanillatech:creative_recipe_book.tooltip0=Benutzen um alle bekannten Rezepte zu lernen.
+item.vanillatech:backpack.name=Rucksack
+item.vanillatech:backpack.tooltip0=Tragbare Doppelkiste
+item.vanillatech:netherstar_shard.name=Netherstern-Scherbe
+item.vanillatech:enhanced_pickaxe.name=Verbesserte Spitzhacke
+item.vanillatech:unstable_metal_ingot.name=Instabiler Metallbarren
+item.vanillatech:crystal_anriatphyte.name=Anriatphyter Kristall
+
+
+
+potion.effect.levitation_short=Trank des Schwebens
+potion.effect.levitation_long=Trank des Schwebens
+splash_potion.effect.levitation_short=Wurftrank des Schwebens
+splash_potion.effect.levitation_long=Wurftrank des Schwebens
+lingering_potion.effect.levitation_short=Langhaltender Trank des Schwebens
+lingering_potion.effect.levitation_long=Langhaltender Trank des Schwebens
+
+
+
+enchantment.vanillatech:auto_smelt=Auto-Schmelzen
+enchantment.vanillatech:infernal_prediction=Infernale Vorhersage
+enchantment.vanillatech:repair=Selbstreperatur
+
+
+
+death.attack.vanillatech:quartz_spike=%s stand auf einem Quarzstachel.
+death.attack.vanillatech:unstable_block_form=%s wurde destabilisiert.
+death.attack.vanillatech:nether_star_dissolve=%s wurde aufgelöst.
+death.attack.vanillatech:anriatphyte_block=%s wurde getötet von anriachphytischer Energie.
+
+
+
+advancement.vanillatech:main/root=Vanilla Tech
+advancement.vanillatech:main/root.desc=Erweitert Minecraft mit fehlenden Features
+
+advancement.vanillatech:main/craftBackpack=Erweitertes Inventar
+advancement.vanillatech:main/craftBackpack.desc=Stelle einen Rucksack her.
+
+advancement.vanillatech:main/craftCoalBlock=Besserer Brennstoff
+advancement.vanillatech:main/craftCoalBlock.desc=Stelle einen Kohleblock her.
+
+advancement.vanillatech:main/craftCharcoalBlock=Bessere Holzkohle
+advancement.vanillatech:main/craftCharcoalBlock.desc=Stelle einen Holzkohleblock her.
+
+advancement.vanillatech:main/craftCompressedCoalBlock=Noch besserer Brennstoff
+advancement.vanillatech:main/craftCompressedCoalBlock.desc=Stelle einen komprimierten Kohleblock her.
+
+advancement.vanillatech:main/craftCompressedCharcoalBlock=Noch bessere Holzkohle
+advancement.vanillatech:main/craftCompressedCharcoalBlock.desc=Stelle einen komprimierten Holzkohleblock her.
+
+advancement.vanillatech:main/craftShieldTotem=Gottgleich!
+advancement.vanillatech:main/craftShieldTotem.desc=Stelle ein Schildtotem her und werde unverwundbar.
+
+advancement.vanillatech:main/craftWitherProofRedStone=Zügle die Mächte
+advancement.vanillatech:main/craftWitherProofRedStone.desc=Stelle roten wtherresistenten Stein her um dem Wither einzusperren.
+
+advancement.vanillatech:main/craftEnhancedPickaxe=Verbessertes Werkzeug: Spitzhacke
+advancement.vanillatech:main/craftEnhancedPickaxe.desc=Stelle die verbesserte Spitzhacke aus Netherstern-Scherben, Diamanten und Stöcken her.
+
+advancement.vanillatech:main/makeUnstableMetalBlock=KABOOM!!
+advancement.vanillatech:main/makeUnstableMetalBlock.desc=Erhalte einen instabilen Metallblock durch das fallenlassen einer Netherstern-Scherbe auf einen Eisenblock und sprenge ihn.
+
+
+
+advancement.vanillatech:flora/root=Vanilla Tech: Flora
+advancement.vanillatech:flora/root.desc=Schicke Blumen!
+
+advancement.vanillatech:flora/breakSlimyFlower=Slimy Situation
+advancement.vanillatech:flora/breakSlimyFlower.desc=Finde und ernte eine schleimige Blume.
+
+advancement.vanillatech:flora/collectAllFlowers=Alle Gerüche!
+advancement.vanillatech:flora/collectAllFlowers.desc=Sammle alle Blumen aus Vanilla Tech: Flora!
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
