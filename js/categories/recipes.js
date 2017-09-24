@@ -1,24 +1,24 @@
-function addRecipe(regName, name)
+function addRecipe(regName)
 {
-	PageBuilder.addLine(name + ":");
+	PageBuilder.addLine(translate("recipe." + regName) + ":");
 	PageBuilder.constrImg("assets/img/recipes/" + regName + ".png").setId(regName).create().show();
 	PageBuilder.addLine("");
 }
 
 exec = function()
 {
-	setTitle("Recipes", "Here you can view every recipe (including specials)");
+	setTitle(translate("recipes"), translate("recipes.text"));
 	
 	var b = PageBuilder;
 	b.clean();
 	
-	addRecipe("backpack", "Backpack");
-	addRecipe("redstone_teleporter", "Redstone Reciesender");
-	addRecipe("shield_totem", "Totem of Shield");
-	addRecipe("witherproof_red_stone", "Wither-Proof Red Rock");
-	addRecipe("time_bomb", "Time Bomb");
-	addRecipe("enhanced_furnace", "Enhanced Furnace");
-	addRecipe("fisher", "Auto-Fisher");
+	addRecipe("backpack");
+	addRecipe("redstone_teleporter");
+	addRecipe("shield_totem");
+	addRecipe("witherproof_red_stone");
+	addRecipe("time_bomb");
+	addRecipe("enhanced_furnace");
+	addRecipe("fisher");
 }
 
 exec();

@@ -1,0 +1,27 @@
+title=Vanilla Tech и Веб-Сайт от APengu
+togglenav=Переключить навигацию
+
+overview=Обзор
+overview.text=Разширяем майнкрафт недостающими елементами
+overview.desc=<p style="text-align: center;"><img src="http://i.imgur.com/9M2v8e1.png" alt= "" width="693" height="113"/></p><p>&nbsp;</p><p>Vanilla Tech направлен на улучшение minecraft.</p><p>Он добавляет полезные вещи что бы облегчить вашу жизнь</p><p>&nbsp;</p><ul><li><strong>Vanilla Tech&nbsp;требует <a href="https://minecraft.curseforge.com/projects/hammer-core">HammerCore</a> что бы работать.</strong></li><li><a href="https://github.com/APengu/VanillaTech/tree/1.12.x/src/main/resources/assets/vanillatech/lang"><strong>VanillaTech нуждается в помощи с переводом</strong></a></li><li><strong><span style="color: #003300;">Vanilla Tech добавляет руды</span>, не переживайте они <span style="color: #008000;">ретро-сгенерируются</span> в вашем мире ;)</strong></li><li>&nbsp;<strong>Немного того, что вам надо знать:</strong><ul><li><strong>Что бы получить осколок адской звезды либо убейте иссушителя, подорвите адскую звезду или <span style="color: #800000;">добудьте их в пещере</span></strong></li><li><span style="color: #000000;"><strong>Что бы получить блок нестабильного метала, подорвите адскую звезду на блоке железа.</strong></span></li><li><span style="color: #000000;"><strong>Что бы получить блок анриатфита, Сбросьте наковальню на блок нестабильного метала.</strong></span></li><li><span style="color: #000000;"><strong>Блок анриатфита наносит урон всем, кроме игрока.</strong></span></li><li><span style="color: #000000;"><strong>Что бы <span style="color: #800000;">Добыть осколок адской звезды</span> вам нужна либо уучшеная кирка либо любая другая кирка с зачарованием "<span style="color: #ff0000;">Infernal Predictor</span>" [<span style="color: #008000;">НОВОЕ</span>]&nbsp;(каждый уровень увеличивает видимое кло-во руды, 10 ур. показывает все руды)</strong></span></li></ul></li></ul><p>&nbsp;</p><p><strong>Сборки</strong></p><ul><li><strong>Вы&nbsp;можете использовать этот мод в сборках.</strong></li></ul><p><strong>Хотите что то обсудить?&nbsp;<a href="https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fgoo.gl%252flH9p8e" rel="nofollow">Заходите на мой твич сервер</a>!</strong></p><p>&nbsp;</p><p><strong>Для модо-делов&nbsp;<a href="#" onclick = "erhi34uy89t34g9" rel="nofollow">как добавить Vanilla Tech в вашу рабочую среду</a><br><br>Скачать:<br><iframe src="https://widget.mcf.li/mc-mods/minecraft/273213-vanilla-tech" width="100%" style="border: none;"></iframe></strong></p>
+
+recipes=Рецепты
+recipes.text=Здесь вы увидите все необходимые вам рецепты (включая особые)
+
+devs=Для разработчиков
+devs.text=Быстрый гайд о том, как добавить Vanilla Tech в вашу рабочую среду
+devs.desc.0=Добавьте данный код в build.gradle:
+devs.desc.1=Как добавить в рабочую среду
+devs.desc.2=Где "MCVERSION" это версия Minecraft, и "VTVERSION" - версия Vanilla Tech
+
+recipe.backpack=Рюкзак
+recipe.redstone_teleporter=Редстоуновый приёмо-передатчик
+recipe.shield_totem=Тотем щита
+recipe.witherproof_red_stone=Непробиваемый Иссушетелем красный камень
+recipe.time_bomb=Бомба замедленного действия
+recipe.enhanced_furnace=Улучшенная печь
+recipe.fisher=Авто-рыбак
+
+err404.desc.1=Похоже что вы читер!
+err404.desc.2=Либо вы попали на сломанную ссылку...
+err404.desc.3=Не переживайте, такое иногда происходит. Мы вас перенаправим на главную страницу в течении 8 секунд...

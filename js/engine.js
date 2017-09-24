@@ -1,5 +1,6 @@
 var currScript = "";
 
+var persisted = {};
 var scripts = {};
 var runtimeScripts = [];
 var exec = function()
@@ -24,8 +25,7 @@ function newPageBuilder(elem)
 		var uuid = "pane-" + (Math.random() * 46247);
 		
 		var d = "<div id = \"" + uuid + "\" class = \"panel panel-default\">";
-		if(title != undefined)
-			d += "<div class=\"panel-heading\">" + title + "</div>";
+		if(title) d += "<div class=\"panel-heading\">" + title + "</div>";
 		d += "</div>";
 		this.addLine(d);
 		
@@ -34,10 +34,8 @@ function newPageBuilder(elem)
 		builder.clean = function()
 		{
 			var dd = document.getElementById(uuid);
-			if(title != undefined)
-				dd.innerHTML = "<div class=\"panel-heading\">" + title + "</div>";
-			else
-				dd.innerHTML = "";
+			dd.innerHTML = "";
+			if(title) dd.innerHTML = "<div class=\"panel-heading\">" + title + "</div>";
 		}
 		
 		return builder;
@@ -143,6 +141,13 @@ function getScriptCaller(script)
 	return "runtimeScripts[" + getScriptIndex(script) + "].func();";
 }
 
+function getCategory(script)
+{
+	return document.getElementById("lcat-" + script);
+}
+
+var categories = [];
+
 function addCategory(name, script)
 {
 	if(document.getElementById("lcat-" + script) != undefined)
@@ -155,6 +160,7 @@ function addCategory(name, script)
 	scripts[script] = name;
 	var f = function() { setScript(script); };
 	runtimeScripts.push({ name: script, func: f });
+	categories.push(script);
 	
 	mm.innerHTML += "<li><a id = \"lcat-" + script + "\" onclick = \"" + getScriptCaller(script) + "\" href = \"#\">" + name + "</a></li>";
 }
@@ -166,10 +172,11 @@ function getScriptName(script)
 
 var lastChild = undefined;
 
-function setScript(script)
+function setScript(script, ignore)
 {
-	if(script == currScript)
-		return;
+	if(!ignore)
+		if(script == currScript)
+			return;
 	
 	console.log("set category " + script);
 	
@@ -207,13 +214,13 @@ function setTitle(title, description)
 	document.getElementById("main-title").innerHTML = "<h2>" + title + "</h2>" + (description ? description : "");
 }
 
-
 function cleanup()
 {
 	var mm = document.getElementById("main-menu");
 	mm.innerHTML = "<li class=\"text-center\"></li>";
 	PageBuilder.clean();
 	runtimeScripts = [];
+	categories = [];
 	setTitle("", "");
 	if(addCats != undefined)
 		addCats();
@@ -221,7 +228,13 @@ function cleanup()
 
 cleanup();
 
-var url = location.search;
-var urls = url.substr(url.lastIndexOf('?') + 1, url.length);
-if(getScriptIndex(urls) != -1)
-	setScript(urls);
+function resetPage()
+{
+	var url = location.search;
+	var urls = url.substr(url.lastIndexOf('?') + 1, url.length);
+	cleanup();
+	if(getScriptIndex(urls) != -1)
+		setScript(urls, true);
+}
+
+resetPage();
