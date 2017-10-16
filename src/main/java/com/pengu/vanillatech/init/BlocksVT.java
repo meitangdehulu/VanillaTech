@@ -57,7 +57,7 @@ public class BlocksVT
 	        SPRUCE_CRAFTING_TABLE = new BlockCustomCraftingTable("spruce"), //
 	        REDSTONE_TELEPORTER = new BlockRedstoneTeleporter(), //
 	        FISHER = new BlockFisher(), //
-	        PLAYER_INVENTORY_MANAGER = new BlockPlayerInventoryManager(), //
+//	        PLAYER_INVENTORY_MANAGER = new BlockPlayerInventoryManager(), //
 	        TIME_BOMB;
 	
 	public static final Block //

@@ -47,7 +47,7 @@ public class TileFisher extends TileSyncableTickable
 			}
 		
 		if(fishCooldown <= 0 && caught)
-			fishCooldown = 250 + rand.nextInt(750);
+			fishCooldown = 750 + rand.nextInt(750);
 		
 		if(fishCooldown > 0 && world.getBlockState(pos.down()).getBlock() == Blocks.WATER)
 		{
