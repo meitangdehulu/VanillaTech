@@ -1,5 +1,9 @@
 package com.pengu.vanillatech.blocks;
 
+import com.pengu.hammercore.core.gui.GuiManager;
+import com.pengu.hammercore.utils.iRegisterListener;
+import com.pengu.vanillatech.init.GuiCallbacksVT;
+
 import net.minecraft.block.BlockWorkbench;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -11,11 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.pengu.hammercore.gui.GuiManager;
-import com.pengu.hammercore.utils.IRegisterListener;
-import com.pengu.vanillatech.init.GuiCallbacksVT;
-
-public class BlockCustomCraftingTable extends BlockWorkbench implements IRegisterListener
+public class BlockCustomCraftingTable extends BlockWorkbench implements iRegisterListener
 {
 	public BlockCustomCraftingTable(String type)
 	{

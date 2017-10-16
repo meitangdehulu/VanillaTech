@@ -1,5 +1,9 @@
 package com.pengu.vanillatech.blocks;
 
+import com.pengu.hammercore.api.iTileBlock;
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.vanillatech.tile.TileTimeBomb;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -14,11 +18,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.api.ITileBlock;
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.vanillatech.tile.TileTimeBomb;
-
-public class BlockTimeBomb extends Block implements ITileEntityProvider, ITileBlock<TileTimeBomb>
+public class BlockTimeBomb extends Block implements ITileEntityProvider, iTileBlock<TileTimeBomb>
 {
 	public static final PropertyEnum<EnumBombPhase> PHASE = PropertyEnum.create("phase", EnumBombPhase.class);
 	

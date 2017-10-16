@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
-public class BlockCompressedCharcoal extends Block implements IBurnableBlock
+public class BlockCompressedCharcoal extends Block implements iBurnableBlock
 {
 	public BlockCompressedCharcoal()
 	{

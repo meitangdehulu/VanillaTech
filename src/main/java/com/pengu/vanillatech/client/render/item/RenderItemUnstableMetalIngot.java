@@ -3,19 +3,19 @@ package com.pengu.vanillatech.client.render.item;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
-import net.minecraft.item.ItemStack;
-
 import org.lwjgl.opengl.GL11;
 
-import com.pengu.hammercore.client.render.item.IItemRender;
+import com.pengu.hammercore.client.render.item.iItemRender;
+import com.pengu.hammercore.client.utils.RenderUtil;
 import com.pengu.vanillatech.client.render.generic.RenderZapLayered;
 import com.pengu.vanillatech.client.render.generic.ZapLayer;
-import com.pengu.vanillatech.items.ItemVTHidden.EnumItemVTHidden;
 
-public class RenderItemUnstableMetalIngot implements IItemRender
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.item.ItemStack;
+
+public class RenderItemUnstableMetalIngot implements iItemRender
 {
 	public final List<ZapLayer> zaps = new ArrayList<>();
 	
@@ -28,21 +28,20 @@ public class RenderItemUnstableMetalIngot implements IItemRender
 	@Override
 	public void renderItem(ItemStack item)
 	{
-		double scale = Math.sin(((System.currentTimeMillis() + item.hashCode()) % 9000L) / 100D) * .2;
+		GL11.glPushMatrix();
+		GL11.glTranslated(.5, .5, .5);
+		GL11.glScaled(.5, .5, .5);
+		RenderZapLayered.renderRandomLayerBasedOnSeed(item.hashCode(), zaps);
+		GL11.glPopMatrix();
+		
+		double scale = Math.sin(((System.currentTimeMillis() + item.hashCode()) % 9000L) / 100D) * 2;
 		
 		GL11.glPushMatrix();
 		GL11.glTranslated(.5, .5, .5);
-		GL11.glScaled(1.68 + scale, 1.68 + scale, 1.68 + scale);
-		GL11.glRotatef(-45 - 180, 0, 1, 0);
-		GL11.glRotated(30, 1, 0, 0);
-		Minecraft.getMinecraft().getRenderItem().renderItem(EnumItemVTHidden.UNSTABLE_METAL_INGOT.stack(), TransformType.FIXED);
+		GL11.glScaled(10 + scale, 10 + scale, 10 + scale);
+		RenderUtil.renderLightRayEffects(0, 0, 0, 0x77FFFFFF, 0, ((System.currentTimeMillis() + item.hashCode()) % 20000L) / 20000F, 1, 2f, 30, 15);
 		GL11.glPopMatrix();
 		
-		RenderZapLayered.renderRandomLayerBasedOnSeed(item.hashCode(), zaps);
-		
-		GL11.glEnable(2884);
-		GlStateManager.color(1, 1, 1);
-		GlStateManager.enableBlend();
-		GlStateManager.enableAlpha();
+		Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
 	}
 }

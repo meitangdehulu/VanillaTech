@@ -1,14 +1,14 @@
 package com.pengu.vanillatech.cfg;
 
-import net.minecraftforge.common.config.Configuration;
-
 import com.pengu.hammercore.cfg.HCModConfigurations;
-import com.pengu.hammercore.cfg.IConfigReloadListener;
+import com.pengu.hammercore.cfg.iConfigReloadListener;
 import com.pengu.hammercore.cfg.fields.ModConfigPropertyBool;
 import com.pengu.vanillatech.Info;
 
+import net.minecraftforge.common.config.Configuration;
+
 @HCModConfigurations(modid = Info.MOD_ID)
-public class ConfigsVT implements IConfigReloadListener
+public class ConfigsVT implements iConfigReloadListener
 {
 	@ModConfigPropertyBool(category = "Client", defaultValue = true, name = "3D Redstone", comment = "Should VanillaTech render redstone objects in 3D?")
 	public static boolean client_3D_redstone = true;

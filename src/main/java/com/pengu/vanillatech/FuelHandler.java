@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.pengu.hammercore.annotations.MCFBus;
 import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.vanillatech.blocks.IBurnableBlock;
+import com.pengu.vanillatech.blocks.iBurnableBlock;
 
 @MCFBus
 public class FuelHandler implements IFuelHandler
@@ -19,7 +19,7 @@ public class FuelHandler implements IFuelHandler
 	@Override
 	public int getBurnTime(ItemStack stack)
 	{
-		IBurnableBlock burnable = WorldUtil.cast(Block.getBlockFromItem(stack.getItem()), IBurnableBlock.class);
+		iBurnableBlock burnable = WorldUtil.cast(Block.getBlockFromItem(stack.getItem()), iBurnableBlock.class);
 		if(burnable != null)
 			return burnable.getBurnTime(stack);
 		if(stack.getItem() == Items.WHEAT)

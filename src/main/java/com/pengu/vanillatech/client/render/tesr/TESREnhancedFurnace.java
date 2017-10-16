@@ -25,9 +25,7 @@ public class TESREnhancedFurnace extends TESR<TileEnhancedFurnace>
 {
 	private static final ItemStack //
 	        furnaceOff = new ItemStack(BlocksVT.ENHANCED_FURNACE), //
-	        furnaceOn = new ItemStack(BlocksVT.ENHANCED_FURNACE), //
-	        furnaceOffEnchanted = new ItemStack(BlocksVT.ENHANCED_FURNACE), //
-	        furnaceOnEnchanted = new ItemStack(BlocksVT.ENHANCED_FURNACE);
+	        furnaceOn = new ItemStack(BlocksVT.ENHANCED_FURNACE);
 	
 	static
 	{
@@ -35,14 +33,6 @@ public class TESREnhancedFurnace extends TESR<TileEnhancedFurnace>
 		furnaceOff.getTagCompound().setBoolean("Lit", false);
 		furnaceOn.setTagCompound(new NBTTagCompound());
 		furnaceOn.getTagCompound().setBoolean("Lit", true);
-		furnaceOffEnchanted.setTagCompound(new NBTTagCompound());
-		furnaceOffEnchanted.getTagCompound().setBoolean("Lit", false);
-		furnaceOnEnchanted.setTagCompound(new NBTTagCompound());
-		furnaceOnEnchanted.getTagCompound().setBoolean("Lit", true);
-		HashMap<Enchantment, Integer> enchantments = new HashMap<>();
-		enchantments.put(EnchantmentsVT.AUTO_SMELT, 1);
-		EnchantmentHelper.setEnchantments(enchantments, furnaceOffEnchanted);
-		EnchantmentHelper.setEnchantments(enchantments, furnaceOnEnchanted);
 	}
 	
 	@Override

@@ -7,6 +7,17 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.hammercore.api.iProcess;
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.HCNetwork;
+import com.pengu.hammercore.utils.AdvancementUtils;
+import com.pengu.hammercore.utils.WorldLocation;
+import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.init.BlocksVT;
+import com.pengu.vanillatech.init.DamageSourcesVT;
+import com.pengu.vanillatech.init.ItemsVT;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -21,18 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.HammerCore;
-import com.pengu.hammercore.api.IUpdatable;
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.net.HCNetwork;
-import com.pengu.hammercore.utils.AdvancementUtils;
-import com.pengu.hammercore.utils.WorldLocation;
-import com.pengu.vanillatech.Info;
-import com.pengu.vanillatech.init.BlocksVT;
-import com.pengu.vanillatech.init.DamageSourcesVT;
-import com.pengu.vanillatech.init.ItemsVT;
-
-public class ProcessConvertIronToUnstable implements IUpdatable
+public class ProcessConvertIronToUnstable implements iProcess
 {
 	private static final Map<Integer, Map<Long, ProcessConvertIronToUnstable>> PROCESSES = new LinkedHashMap<>();
 	

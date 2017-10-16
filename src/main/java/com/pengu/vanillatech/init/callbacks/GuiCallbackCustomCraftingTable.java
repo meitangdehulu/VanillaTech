@@ -1,14 +1,14 @@
 package com.pengu.vanillatech.init.callbacks;
 
+import com.pengu.hammercore.core.gui.iGuiCallback;
+import com.pengu.vanillatech.client.gui.inventory.GuiCustomWorkbench;
+import com.pengu.vanillatech.inventory.ContainerCustomWorkbench;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.gui.IGuiCallback;
-import com.pengu.vanillatech.client.gui.inventory.GuiCustomWorkbench;
-import com.pengu.vanillatech.inventory.ContainerCustomWorkbench;
-
-public class GuiCallbackCustomCraftingTable implements IGuiCallback
+public class GuiCallbackCustomCraftingTable implements iGuiCallback
 {
 	int id;
 	

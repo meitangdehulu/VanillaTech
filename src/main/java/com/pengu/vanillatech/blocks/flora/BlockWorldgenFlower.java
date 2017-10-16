@@ -3,6 +3,11 @@ package com.pengu.vanillatech.blocks.flora;
 import java.util.Random;
 import java.util.function.Predicate;
 
+import com.pengu.hammercore.utils.iRegisterListener;
+import com.pengu.hammercore.world.WorldGenHelper;
+import com.pengu.hammercore.world.gen.WorldRetroGen;
+import com.pengu.hammercore.world.gen.iWorldGenFeature;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -12,12 +17,7 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
-import com.pengu.hammercore.utils.IRegisterListener;
-import com.pengu.hammercore.world.WorldGenHelper;
-import com.pengu.hammercore.world.gen.IWorldGenFeature;
-import com.pengu.hammercore.world.gen.WorldRetroGen;
-
-public class BlockWorldgenFlower extends BlockBush implements IWorldGenFeature, IRegisterListener
+public class BlockWorldgenFlower extends BlockBush implements iWorldGenFeature, iRegisterListener
 {
 	protected int worldgen_maxSpread = 6, worldgen_minCount = 2, worldgen_maxCount = 8;
 	protected Predicate<Biome> worldgen_spawnableBiomes = b -> true;

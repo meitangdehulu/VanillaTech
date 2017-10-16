@@ -1,5 +1,8 @@
 package com.pengu.vanillatech.blocks;
 
+import com.pengu.hammercore.api.iTileBlock;
+import com.pengu.vanillatech.tile.TileFisher;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -12,10 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.api.ITileBlock;
-import com.pengu.vanillatech.tile.TileFisher;
-
-public class BlockFisher extends Block implements ITileEntityProvider, ITileBlock<TileFisher>
+public class BlockFisher extends Block implements ITileEntityProvider, iTileBlock<TileFisher>
 {
 	public BlockFisher()
 	{

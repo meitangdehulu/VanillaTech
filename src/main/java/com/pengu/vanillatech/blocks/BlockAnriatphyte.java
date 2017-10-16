@@ -2,6 +2,10 @@ package com.pengu.vanillatech.blocks;
 
 import java.util.Random;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.hammercore.api.iTileBlock;
+import com.pengu.vanillatech.tile.TileAnriatphyteBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -13,11 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.HammerCore;
-import com.pengu.hammercore.api.ITileBlock;
-import com.pengu.vanillatech.tile.TileAnriatphyteBlock;
-
-public class BlockAnriatphyte extends Block implements ITileEntityProvider, ITileBlock<TileAnriatphyteBlock>
+public class BlockAnriatphyte extends Block implements ITileEntityProvider, iTileBlock<TileAnriatphyteBlock>
 {
 	public BlockAnriatphyte()
 	{

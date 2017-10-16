@@ -1,19 +1,19 @@
 package com.pengu.vanillatech.client.render.item;
 
+import com.pengu.hammercore.client.render.item.iItemRender;
+import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
+import com.pengu.hammercore.client.utils.RenderBlocks;
+import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.blocks.BlockRedstoneTeleporter;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.client.render.item.IItemRender;
-import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
-import com.pengu.hammercore.client.utils.RenderBlocks;
-import com.pengu.vanillatech.Info;
-import com.pengu.vanillatech.blocks.BlockRedstoneTeleporter;
-
 @SideOnly(Side.CLIENT)
-public class RenderRepeater implements IItemRender
+public class RenderRepeater implements iItemRender
 {
 	@Override
 	public void renderItem(ItemStack item)

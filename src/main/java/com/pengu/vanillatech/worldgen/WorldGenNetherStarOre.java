@@ -2,6 +2,10 @@ package com.pengu.vanillatech.worldgen;
 
 import java.util.Random;
 
+import com.pengu.hammercore.world.gen.WorldGenMinableHC;
+import com.pengu.hammercore.world.gen.iWorldGenFeature;
+import com.pengu.vanillatech.init.BlocksVT;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -9,11 +13,7 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
-import com.pengu.hammercore.world.gen.IWorldGenFeature;
-import com.pengu.hammercore.world.gen.WorldGenMinableHC;
-import com.pengu.vanillatech.init.BlocksVT;
-
-public class WorldGenNetherStarOre implements IWorldGenFeature
+public class WorldGenNetherStarOre implements iWorldGenFeature
 {
 	@Override
 	public int getMaxChances(World world, ChunkPos chunk, Random rand)

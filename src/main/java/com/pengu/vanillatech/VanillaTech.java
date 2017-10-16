@@ -3,26 +3,9 @@ package com.pengu.vanillatech;
 import java.util.Arrays;
 import java.util.function.Supplier;
 
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Tuple;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLConstructionEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
+import com.pengu.hammercore.common.SimpleRegistration;
 import com.pengu.hammercore.common.match.item.ItemListContainerHelper;
 import com.pengu.hammercore.common.match.item.ItemMatchParams;
-import com.pengu.hammercore.init.SimpleRegistration;
 import com.pengu.hammercore.intent.IntentManager;
 import com.pengu.hammercore.recipeAPI.BrewingRecipe;
 import com.pengu.hammercore.world.gen.WorldRetroGen;
@@ -39,6 +22,23 @@ import com.pengu.vanillatech.worldgen.WorldGenNetherStarOre;
 import com.pengu.vanillatech.worldgen.WorldGenOverworldGlowstone;
 import com.pengu.vanillatech.worldgen.WorldGenOverworldQuartz;
 import com.pengu.vanillatech.worldgen.WorldGenRedRock;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Tuple;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Info.MOD_ID, name = Info.MOD_NAME, version = Info.MOD_VERSION, dependencies = "required-after:hammercore", guiFactory = "com.pengu.vanillatech.cfg.ConfigFactoryVT")
 public class VanillaTech

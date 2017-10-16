@@ -3,19 +3,8 @@ package com.pengu.vanillatech.proxy;
 import java.util.Random;
 import java.util.function.IntSupplier;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-
-import com.pengu.hammercore.client.render.item.IItemRender;
 import com.pengu.hammercore.client.render.item.ItemRenderingHandler;
+import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.render.tesr.TESR;
 import com.pengu.vanillatech.Info;
 import com.pengu.vanillatech.blocks.BlockNetherstarOre;
@@ -39,6 +28,18 @@ import com.pengu.vanillatech.tile.TileEnhancedFurnace;
 import com.pengu.vanillatech.tile.TileFisher;
 import com.pengu.vanillatech.tile.TileRedstoneTeleporter;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+
 public class ClientProxy extends CommonProxy
 {
 	@Override
@@ -46,23 +47,23 @@ public class ClientProxy extends CommonProxy
 	{
 		MinecraftForge.EVENT_BUS.register(new ClientTicker());
 		MinecraftForge.EVENT_BUS.register(new RenderZapLayered());
+		
+		bind(new TESRRedstoneTeleporter(), BlocksVT.REDSTONE_TELEPORTER, TileRedstoneTeleporter.class, true);
+		bind(new RenderRepeater(), Items.REPEATER, true);
 	}
 	
 	@Override
 	public void init()
 	{
-		ItemRenderingHandler.INSTANCE.bindItemRender(Item.getItemFromBlock(BlocksVT.GLOWSTONE_ORE), new RenderGlowstoneOre());
-		ItemRenderingHandler.INSTANCE.bindItemRender(Item.getItemFromBlock(BlocksVT.NETHERSTAR_ORE), new RenderNetherstarOre());
-		ItemRenderingHandler.INSTANCE.bindItemRender(Item.getItemFromBlock(BlocksVT.UNSTABLE_METAL_BLOCK), new RenderBlockUnstableMetal());
-		ItemRenderingHandler.INSTANCE.bindItemRender(ItemsVT.UNSTABLE_METAL_INGOT, new RenderItemUnstableMetalIngot());
-		ItemRenderingHandler.INSTANCE.bindItemRender(Item.getItemFromBlock(BlocksVT.ANRIATPHYTE_BLOCK), new RenderBlockAnriatphyte());
-		ItemRenderingHandler.INSTANCE.bindItemRender(ItemsVT.ANRIATPHYTE_CRYSTAL, new RenderItemAnriatphyteCrystal());
+		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.GLOWSTONE_ORE), new RenderGlowstoneOre());
+		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.NETHERSTAR_ORE), new RenderNetherstarOre());
+		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.UNSTABLE_METAL_BLOCK), new RenderBlockUnstableMetal());
+		ItemRenderingHandler.INSTANCE.appendItemRender(ItemsVT.UNSTABLE_METAL_INGOT, new RenderItemUnstableMetalIngot());
+		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.ANRIATPHYTE_BLOCK), new RenderBlockAnriatphyte());
+		ItemRenderingHandler.INSTANCE.appendItemRender(ItemsVT.ANRIATPHYTE_CRYSTAL, new RenderItemAnriatphyteCrystal());
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEnhancedFurnace.class, new TESREnhancedFurnace());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileFisher.class, new TESRFisher());
-		
-		bind(new TESRRedstoneTeleporter(), BlocksVT.REDSTONE_TELEPORTER, TileRedstoneTeleporter.class, true);
-		bind(new RenderRepeater(), Items.REPEATER, true);
 	}
 	
 	private <T extends TileEntity> void bind(TESR<T> tesr, Block block, Class<T> tile, boolean redstoneItem)
@@ -70,13 +71,13 @@ public class ClientProxy extends CommonProxy
 		if(tile != null)
 			ClientRegistry.bindTileEntitySpecialRenderer(tile, tesr);
 		if(!redstoneItem || ConfigsVT.client_3D_redstone)
-			ItemRenderingHandler.INSTANCE.bindItemRender(Item.getItemFromBlock(block), tesr);
+			ItemRenderingHandler.INSTANCE.setItemRender(Item.getItemFromBlock(block), tesr);
 	}
 	
-	private <T extends TileEntity> void bind(IItemRender tesr, Item block, boolean redstoneItem)
+	private <T extends TileEntity> void bind(iItemRender tesr, Item block, boolean redstoneItem)
 	{
 		if(!redstoneItem || ConfigsVT.client_3D_redstone)
-			ItemRenderingHandler.INSTANCE.bindItemRender(block, tesr);
+			ItemRenderingHandler.INSTANCE.setItemRender(block, tesr);
 	}
 	
 	private static final Random netherStarOreRand = new Random();
@@ -91,9 +92,10 @@ public class ClientProxy extends CommonProxy
 		
 		if(b == BlocksVT.NETHERSTAR_ORE)
 		{
-			ItemStack held = Minecraft.getMinecraft().player.getHeldItemMainhand();
-			netherStarOreRand.setSeed(pos.toLong() + Minecraft.getMinecraft().player.world.provider.getDimension());
-			if(BlockNetherstarOre.canBeSeenWith(held, netherStarOreRand))
+			EntityPlayerSP player = Minecraft.getMinecraft().player;
+			ItemStack held = player.getHeldItemMainhand();
+			netherStarOreRand.setSeed(pos.toLong() + player.world.provider.getDimension());
+			if(BlockNetherstarOre.canBeSeenWith(held, netherStarOreRand) || player.capabilities.isCreativeMode)
 			{
 				ParticleGlowingBlockOverlay.ensureGlowing(world, pos, Info.MOD_ID + ":blocks/netherstar_ore");
 				setBlockGlowingBrightness(pos, BlockNetherstarOre.BRIGHTNESS);

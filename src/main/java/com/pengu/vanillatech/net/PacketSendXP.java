@@ -1,16 +1,16 @@
 package com.pengu.vanillatech.net;
 
+import com.pengu.hammercore.common.utils.XPUtil;
+import com.pengu.hammercore.net.packetAPI.iPacket;
+import com.pengu.hammercore.net.packetAPI.iPacketListener;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.common.utils.XPUtil;
-import com.pengu.hammercore.net.packetAPI.IPacket;
-import com.pengu.hammercore.net.packetAPI.IPacketListener;
-
-public class PacketSendXP implements IPacket, IPacketListener<PacketSendXP, IPacket>
+public class PacketSendXP implements iPacket, iPacketListener<PacketSendXP, iPacket>
 {
 	private int xp;
 	
@@ -36,7 +36,7 @@ public class PacketSendXP implements IPacket, IPacketListener<PacketSendXP, IPac
 	}
 	
 	@Override
-	public IPacket onArrived(PacketSendXP packet, MessageContext context)
+	public iPacket onArrived(PacketSendXP packet, MessageContext context)
 	{
 		if(context.side == Side.CLIENT)
 			packet.client();

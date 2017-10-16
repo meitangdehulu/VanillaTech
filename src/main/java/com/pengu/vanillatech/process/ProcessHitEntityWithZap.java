@@ -1,14 +1,13 @@
 package com.pengu.vanillatech.process;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.hammercore.api.iProcess;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 
-import com.pengu.hammercore.HammerCore;
-import com.pengu.hammercore.api.IUpdatable;
-
-public class ProcessHitEntityWithZap implements IUpdatable
+public class ProcessHitEntityWithZap implements iProcess
 {
 	int delay, rgb;
 	Vec3d start;

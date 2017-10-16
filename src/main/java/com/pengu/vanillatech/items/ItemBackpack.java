@@ -2,6 +2,11 @@ package com.pengu.vanillatech.items;
 
 import java.util.UUID;
 
+import com.pengu.hammercore.core.gui.GuiManager;
+import com.pengu.hammercore.net.HCNetwork;
+import com.pengu.vanillatech.init.GuiCallbacksVT;
+import com.pengu.vanillatech.inventory.ContainerBackpack;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,11 +19,6 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-
-import com.pengu.hammercore.gui.GuiManager;
-import com.pengu.hammercore.net.HCNetwork;
-import com.pengu.vanillatech.init.GuiCallbacksVT;
-import com.pengu.vanillatech.inventory.ContainerBackpack;
 
 public class ItemBackpack extends Item
 {

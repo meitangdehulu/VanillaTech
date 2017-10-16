@@ -4,6 +4,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Predicate;
 
+import com.pengu.hammercore.utils.iRegisterListener;
+import com.pengu.hammercore.world.WorldGenHelper;
+import com.pengu.hammercore.world.gen.WorldRetroGen;
+import com.pengu.hammercore.world.gen.iWorldGenFeature;
+import com.pengu.vanillatech.init.DamageSourcesVT;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,13 +29,7 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.pengu.hammercore.utils.IRegisterListener;
-import com.pengu.hammercore.world.WorldGenHelper;
-import com.pengu.hammercore.world.gen.IWorldGenFeature;
-import com.pengu.hammercore.world.gen.WorldRetroGen;
-import com.pengu.vanillatech.init.DamageSourcesVT;
-
-public class BlockQuartzSpike extends Block implements IWorldGenFeature, IRegisterListener
+public class BlockQuartzSpike extends Block implements iWorldGenFeature, iRegisterListener
 {
 	public static final AxisAlignedBB aabb = new AxisAlignedBB(1 / 8D, 0, 1 / 8D, 7 / 8D, 6 / 8D, 7 / 8D);
 	

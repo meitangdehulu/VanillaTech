@@ -1,6 +1,5 @@
 package com.pengu.vanillatech.blocks.flora;
 
-
 public class BlockButtercup extends BlockWorldgenFlower
 {
 	public BlockButtercup()

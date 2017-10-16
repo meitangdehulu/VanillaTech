@@ -26,6 +26,7 @@ import com.pengu.vanillatech.blocks.flora.BlockButtercup;
 import com.pengu.vanillatech.blocks.flora.BlockDaisy;
 import com.pengu.vanillatech.blocks.flora.BlockLavender;
 import com.pengu.vanillatech.blocks.flora.BlockSlimyFlower;
+import com.pengu.vanillatech.blocks.pim.BlockPlayerInventoryManager;
 import com.pengu.vanillatech.cfg.ConfigsVT;
 
 public class BlocksVT
@@ -56,6 +57,7 @@ public class BlocksVT
 	        SPRUCE_CRAFTING_TABLE = new BlockCustomCraftingTable("spruce"), //
 	        REDSTONE_TELEPORTER = new BlockRedstoneTeleporter(), //
 	        FISHER = new BlockFisher(), //
+	        PLAYER_INVENTORY_MANAGER = new BlockPlayerInventoryManager(), //
 	        TIME_BOMB;
 	
 	public static final Block //

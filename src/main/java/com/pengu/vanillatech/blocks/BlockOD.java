@@ -1,13 +1,13 @@
 package com.pengu.vanillatech.blocks;
 
+import com.pengu.hammercore.utils.iRegisterListener;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.pengu.hammercore.utils.IRegisterListener;
-
-public class BlockOD extends Block implements IRegisterListener
+public class BlockOD extends Block implements iRegisterListener
 {
 	public final String od;
 	

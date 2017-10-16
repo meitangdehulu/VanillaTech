@@ -1,5 +1,11 @@
 package com.pengu.vanillatech.net;
 
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.packetAPI.iPacket;
+import com.pengu.hammercore.net.packetAPI.iPacketListener;
+import com.pengu.vanillatech.tile.TileFisher;
+import com.pengu.vanillatech.utils.AtomicTuple;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -8,13 +14,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.net.packetAPI.IPacket;
-import com.pengu.hammercore.net.packetAPI.IPacketListener;
-import com.pengu.vanillatech.tile.TileFisher;
-import com.pengu.vanillatech.utils.AtomicTuple;
-
-public class PacketAddFisherItem implements IPacket, IPacketListener<PacketAddFisherItem, IPacket>
+public class PacketAddFisherItem implements iPacket, iPacketListener<PacketAddFisherItem, iPacket>
 {
 	private long pos;
 	private ItemStack drop;
@@ -30,7 +30,7 @@ public class PacketAddFisherItem implements IPacket, IPacketListener<PacketAddFi
 	}
 	
 	@Override
-	public IPacket onArrived(PacketAddFisherItem packet, MessageContext context)
+	public iPacket onArrived(PacketAddFisherItem packet, MessageContext context)
 	{
 		if(context.side == Side.CLIENT)
 			packet.client();

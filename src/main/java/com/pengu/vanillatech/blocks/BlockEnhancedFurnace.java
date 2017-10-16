@@ -2,6 +2,15 @@ package com.pengu.vanillatech.blocks;
 
 import java.util.Random;
 
+import com.pengu.hammercore.api.iTileBlock;
+import com.pengu.hammercore.common.blocks.iItemBlock;
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.core.gui.GuiManager;
+import com.pengu.hammercore.tile.TileSyncable;
+import com.pengu.vanillatech.blocks.items.ItemBlockEnhancedFurnace;
+import com.pengu.vanillatech.init.BlocksVT;
+import com.pengu.vanillatech.tile.TileEnhancedFurnace;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
@@ -28,22 +37,12 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.pengu.hammercore.api.ITileBlock;
-import com.pengu.hammercore.common.blocks.IItemBlock;
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.gui.GuiManager;
-import com.pengu.hammercore.tile.TileSyncable;
-import com.pengu.vanillatech.blocks.items.ItemBlockEnhancedFurnace;
-import com.pengu.vanillatech.init.BlocksVT;
-import com.pengu.vanillatech.tile.TileEnhancedFurnace;
-
-public class BlockEnhancedFurnace extends Block implements ITileEntityProvider, ITileBlock<TileEnhancedFurnace>, IItemBlock
+public class BlockEnhancedFurnace extends Block implements ITileEntityProvider, iTileBlock<TileEnhancedFurnace>, iItemBlock
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool ENABLED = PropertyBool.create("active");

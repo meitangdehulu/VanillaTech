@@ -1,6 +1,6 @@
 package com.pengu.vanillatech.init;
 
-import com.pengu.hammercore.init.SimpleRegistration;
+import com.pengu.hammercore.common.SimpleRegistration;
 import com.pengu.hammercore.utils.SoundObject;
 import com.pengu.vanillatech.Info;
 

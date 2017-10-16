@@ -2,6 +2,8 @@ package com.pengu.vanillatech.client.gui.inventory;
 
 import java.io.IOException;
 
+import com.pengu.vanillatech.inventory.ContainerCustomWorkbench;
+
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonImage;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -18,8 +20,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.pengu.vanillatech.inventory.ContainerCustomWorkbench;
 
 @SideOnly(Side.CLIENT)
 public class GuiCustomWorkbench extends GuiContainer implements IRecipeShownListener
@@ -44,7 +44,7 @@ public class GuiCustomWorkbench extends GuiContainer implements IRecipeShownList
 	{
 		super.initGui();
 		this.widthTooNarrow = this.width < 379;
-		this.recipeBookGui.init(this.width, this.height, this.mc, this.widthTooNarrow, this.inventorySlots, ((ContainerWorkbench) this.inventorySlots).craftMatrix);
+//		this.recipeBookGui.init(this.width, this.height, this.mc, this.widthTooNarrow, this.inventorySlots, ((ContainerWorkbench) this.inventorySlots).craftMatrix);
 		this.guiLeft = this.recipeBookGui.updateScreenPosition(this.widthTooNarrow, this.width, this.xSize);
 		this.recipeButton = new GuiButtonImage(10, this.guiLeft + 5, this.height / 2 - 49, 20, 18, 0, 168, 19, CRAFTING_TABLE_GUI_TEXTURES);
 		this.buttonList.add(this.recipeButton);
@@ -146,5 +146,11 @@ public class GuiCustomWorkbench extends GuiContainer implements IRecipeShownList
 	{
 		this.recipeBookGui.removed();
 		super.onGuiClosed();
+	}
+
+	@Override
+	public GuiRecipeBook func_194310_f()
+	{
+		return recipeBookGui;
 	}
 }
