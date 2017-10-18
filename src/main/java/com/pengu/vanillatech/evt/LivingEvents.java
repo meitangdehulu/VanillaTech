@@ -2,6 +2,16 @@ package com.pengu.vanillatech.evt;
 
 import java.util.Map;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.hammercore.annotations.MCFBus;
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.HCNetwork;
+import com.pengu.hammercore.utils.WorldLocation;
+import com.pengu.vanillatech.init.ItemsVT;
+import com.pengu.vanillatech.items.ItemEnhancedPickaxe;
+import com.pengu.vanillatech.items.ItemShieldTotem;
+import com.pengu.vanillatech.net.PacketEnhancedBlockBroken;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,14 +25,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import com.pengu.hammercore.HammerCore;
-import com.pengu.hammercore.annotations.MCFBus;
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.vanillatech.init.ItemsVT;
-import com.pengu.vanillatech.items.ItemShieldTotem;
 
 @MCFBus
 public class LivingEvents
@@ -75,6 +80,16 @@ public class LivingEvents
 			{
 			} // should be fine
 		}
+	}
+	
+	@SubscribeEvent
+	public void breakBlock(BlockEvent.BreakEvent e)
+	{
+		if(e.getWorld().isRemote)
+			return;
+		ItemStack stack = e.getPlayer().getHeldItemMainhand();
+		if(!stack.isEmpty() && stack.getItem() instanceof ItemEnhancedPickaxe)
+			HCNetwork.manager.sendToAllAround(new PacketEnhancedBlockBroken(), new WorldLocation(e.getWorld(), e.getPos()).getPointWithRad(16));
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = false)

@@ -1,34 +1,41 @@
 package com.pengu.vanillatech.tile;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.hammercore.tile.tooltip.iTooltipTile;
+
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 
-import com.pengu.hammercore.HammerCore;
-import com.pengu.hammercore.tile.TileSyncableTickable;
-import com.pengu.hammercore.utils.ColorHelper;
-
-public class TileRedstoneTeleporter extends TileSyncableTickable
+public class TileRedstoneTeleporter extends TileSyncableTickable implements iTooltipTile
 {
 	public static final Map<String, Integer> ENABLED = new HashMap<>();
 	
+	public int activeTicks = 0;
 	public UUID uuid;
 	public boolean isActive = false;
 	public EnumFacing direction;
 	public int redstone;
 	public boolean isReceiving = false;
+	public Integer color;
 	
 	public TileRedstoneTeleporter(UUID uuid)
 	{
 		this.uuid = uuid;
+		
+		Random rand = new Random(uuid != null ? uuid.getMostSignificantBits() - uuid.getLeastSignificantBits() : 0L);
+		color = uuid != null ? rand.nextInt(0xFFFFFF) : 0xFF7777;
 	}
 	
 	public TileRedstoneTeleporter()
@@ -41,13 +48,36 @@ public class TileRedstoneTeleporter extends TileSyncableTickable
 		properties.put("uuid", uuid);
 		properties.put("active", isActive);
 		properties.put("receiving", isReceiving);
-		properties.put("direction", direction.getName());
+		if(direction != null)
+			properties.put("direction", direction.getName());
 		properties.put("strength", redstone);
+	}
+	
+	public int getColor()
+	{
+		if(color == null)
+		{
+			Random rand = new Random(uuid != null ? uuid.getMostSignificantBits() - uuid.getLeastSignificantBits() : 0L);
+			color = uuid != null ? rand.nextInt(0xFFFFFF) : 0xFF7777;
+		}
+		
+		return color;
 	}
 	
 	@Override
 	public void tick()
 	{
+		getColor();
+		
+		if(redstone > 0)
+		{
+			if(activeTicks < 10)
+				++activeTicks;
+		} else if(activeTicks > 0)
+			--activeTicks;
+		else
+			activeTicks = 0;
+		
 		if(world.isRemote || direction == null)
 			return;
 		
@@ -93,7 +123,7 @@ public class TileRedstoneTeleporter extends TileSyncableTickable
 			
 			Random rand = new Random(uuid != null ? uuid.getMostSignificantBits() - uuid.getLeastSignificantBits() : 0L);
 			int color = uuid != null ? rand.nextInt(0xFFFFFF) : 0xFF7777;
-			HammerCore.particleProxy.spawnSlowZap(world, start, end, color, 15, .3F);
+			HammerCore.particleProxy.spawnSlowZap(world, start, end, color, 3, .3F);
 		}
 		
 		if(atTickRate(20))
@@ -110,6 +140,8 @@ public class TileRedstoneTeleporter extends TileSyncableTickable
 		nbt.setBoolean("Sending", !isReceiving);
 		nbt.setBoolean("IsActive", isActive);
 		nbt.setInteger("Redstone", redstone);
+		if(color != null)
+			nbt.setInteger("Color", color);
 	}
 	
 	@Override
@@ -121,5 +153,14 @@ public class TileRedstoneTeleporter extends TileSyncableTickable
 		isReceiving = !nbt.getBoolean("Sending");
 		isActive = nbt.getBoolean("IsActive");
 		redstone = nbt.getInteger("Redstone");
+		if(nbt.hasKey("Color"))
+			color = nbt.getInteger("Color");
+	}
+	
+	@Override
+	public void getTextTooltip(List<String> list, EntityPlayer player)
+	{
+		list.add("Mode: " + (isReceiving ? "Receiving" : "Sending"));
+		list.add("Power: " + redstone);
 	}
 }

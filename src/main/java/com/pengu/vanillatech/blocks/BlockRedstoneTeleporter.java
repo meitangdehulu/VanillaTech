@@ -25,6 +25,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -107,6 +108,17 @@ public class BlockRedstoneTeleporter extends BlockContainer implements iItemBloc
 	public int getStrongPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
 	{
 		return getWeakPower(blockState, blockAccess, pos, side);
+	}
+	
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
+	{
+		ItemStack stack = new ItemStack(this);
+		stack.setTagCompound(new NBTTagCompound());
+		TileRedstoneTeleporter tp = WorldUtil.cast(world.getTileEntity(pos), TileRedstoneTeleporter.class);
+		if(tp != null)
+			stack.getTagCompound().setUniqueId("UUID", tp.uuid);
+		return stack;
 	}
 	
 	@Override

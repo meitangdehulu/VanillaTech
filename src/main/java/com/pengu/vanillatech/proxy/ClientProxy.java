@@ -14,6 +14,7 @@ import com.pengu.vanillatech.client.particle.ParticleGlowingBlockOverlay;
 import com.pengu.vanillatech.client.render.generic.RenderZapLayered;
 import com.pengu.vanillatech.client.render.item.RenderBlockAnriatphyte;
 import com.pengu.vanillatech.client.render.item.RenderBlockUnstableMetal;
+import com.pengu.vanillatech.client.render.item.RenderEnhancedPickaxe;
 import com.pengu.vanillatech.client.render.item.RenderGlowstoneOre;
 import com.pengu.vanillatech.client.render.item.RenderItemAnriatphyteCrystal;
 import com.pengu.vanillatech.client.render.item.RenderItemUnstableMetalIngot;
@@ -55,6 +56,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void init()
 	{
+		ItemRenderingHandler.INSTANCE.appendItemRender(ItemsVT.ENHANCED_PICKAXE, new RenderEnhancedPickaxe());
 		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.GLOWSTONE_ORE), new RenderGlowstoneOre());
 		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.NETHERSTAR_ORE), new RenderNetherstarOre());
 		ItemRenderingHandler.INSTANCE.appendItemRender(Item.getItemFromBlock(BlocksVT.UNSTABLE_METAL_BLOCK), new RenderBlockUnstableMetal());

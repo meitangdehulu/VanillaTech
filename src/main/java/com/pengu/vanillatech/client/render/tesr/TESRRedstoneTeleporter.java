@@ -1,14 +1,21 @@
 package com.pengu.vanillatech.client.render.tesr;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.Vec3d;
+
+import java.util.Random;
+import java.util.UUID;
 
 import org.lwjgl.opengl.GL11;
 
 import com.pengu.hammercore.client.render.tesr.TESR;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
+import com.pengu.hammercore.client.utils.RenderUtil;
 import com.pengu.vanillatech.Info;
 import com.pengu.vanillatech.blocks.BlockRedstoneTeleporter;
 import com.pengu.vanillatech.tile.TileRedstoneTeleporter;
@@ -21,11 +28,16 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
 		
 		boolean isActive = false;
+		int color = 0;
 		
 		if(item.hasTagCompound() && item.getTagCompound().hasKey("UUIDMost"))
 		{
-			Integer r = TileRedstoneTeleporter.ENABLED.get(item.getTagCompound().getUniqueId("UUID").toString());
+			UUID uuid = item.getTagCompound().getUniqueId("UUID");
+			Integer r = TileRedstoneTeleporter.ENABLED.get(uuid.toString());
 			isActive = (r != null ? r : 0) > 0;
+			
+			Random rand = new Random(uuid != null ? uuid.getMostSignificantBits() - uuid.getLeastSignificantBits() : 0L);
+			color = uuid != null ? rand.nextInt(0xFFFFFF) : 0xFF7777;
 		}
 		
 		sbr.begin();
@@ -60,6 +72,15 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.drawBlock(0, 0, -3 / 16D);
 		
 		sbr.end();
+		
+		if(isActive)
+		{
+			GL11.glPushMatrix();
+			GL11.glTranslated(.5, .55, .25);
+			GL11.glScaled(5, 5, 5);
+			RenderUtil.renderLightRayEffects(0, 0, 0, 120 << 24 | color, 0L, Minecraft.getMinecraft().player.ticksExisted / 360F, 1, 2F, 25, 15);
+			GL11.glPopMatrix();
+		}
 	}
 	
 	@Override
@@ -124,5 +145,16 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.end();
 		
 		GL11.glPopMatrix();
+		
+		if(te.activeTicks > 0)
+		{
+			float strength = 360;
+			Vec3d i0 = new Vec3d(te.direction == EnumFacing.EAST ? .25 : te.direction == EnumFacing.WEST ? .75 : .5, .55, te.direction == EnumFacing.SOUTH ? .25 : te.direction == EnumFacing.NORTH ? .75 : .5);
+			GL11.glPushMatrix();
+			GL11.glTranslated(x + i0.x, y + i0.y, z + i0.z);
+			GL11.glScaled(5 * (te.activeTicks / 10F), 5 * (te.activeTicks / 10F), 5 * (te.activeTicks / 10F));
+			RenderUtil.renderLightRayEffects(0, 0, 0, 5 << 24 | te.getColor(), te.getPos().toLong(), te.ticksExisted / strength + partialTicks / strength, 1, 2F, 25, 15);
+			GL11.glPopMatrix();
+		}
 	}
 }

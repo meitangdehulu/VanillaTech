@@ -5,7 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import com.pengu.hammercore.common.utils.WorldUtil;
+import com.pengu.hammercore.net.HCNetwork;
+import com.pengu.hammercore.tile.TileSyncableTickable;
+import com.pengu.hammercore.tile.tooltip.ProgressBar;
+import com.pengu.hammercore.tile.tooltip.iTooltipTile;
+import com.pengu.vanillatech.net.PacketAddFisherItem;
+import com.pengu.vanillatech.utils.AtomicTuple;
+import com.pengu.vanillatech.utils.InventoryHelpers;
+
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -18,16 +28,11 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTableList;
 
-import com.pengu.hammercore.common.utils.WorldUtil;
-import com.pengu.hammercore.net.HCNetwork;
-import com.pengu.hammercore.tile.TileSyncableTickable;
-import com.pengu.vanillatech.net.PacketAddFisherItem;
-import com.pengu.vanillatech.utils.AtomicTuple;
-import com.pengu.vanillatech.utils.InventoryHelpers;
-
-public class TileFisher extends TileSyncableTickable
+public class TileFisher extends TileSyncableTickable implements iTooltipTile
 {
-	public int fishCooldown;
+	public ProgressBar bar = new ProgressBar(100L);
+	
+	public int fishCooldown, fishMaxCooldown;
 	public float fishDistance, fishApproachAngle;
 	public boolean caught = true;
 	public boolean flag1 = false;
@@ -47,13 +52,16 @@ public class TileFisher extends TileSyncableTickable
 			}
 		
 		if(fishCooldown <= 0 && caught)
-			fishCooldown = 750 + rand.nextInt(750);
+			fishMaxCooldown = fishCooldown = 750 + rand.nextInt(750);
 		
 		if(fishCooldown > 0 && world.getBlockState(pos.down()).getBlock() == Blocks.WATER)
 		{
 			fishCooldown--;
 			flag1 = false;
 		}
+		
+		if(atTickRate(5))
+			sendChangesToNearby();
 		
 		if(fishCooldown == 0)
 		{
@@ -76,7 +84,7 @@ public class TileFisher extends TileSyncableTickable
 				if(state.getBlock() == Blocks.WATER)
 					for(int i = 0; i < 9; ++i)
 						HCNetwork.spawnParticle(world, EnumParticleTypes.WATER_SPLASH, xOff, pos.getY(), zOff, 0, 0, 0);
-				
+					
 				if(fishDistance <= .25F)
 				{
 					caught = true;
@@ -127,11 +135,41 @@ public class TileFisher extends TileSyncableTickable
 	public void writeNBT(NBTTagCompound nbt)
 	{
 		nbt.setInteger("FishCooldown", fishCooldown);
+		nbt.setInteger("FishMaxCooldown", fishMaxCooldown);
 	}
 	
 	@Override
 	public void readNBT(NBTTagCompound nbt)
 	{
 		fishCooldown = nbt.getInteger("FishCooldown");
+		fishMaxCooldown = nbt.getInteger("FishMaxCooldown");
+	}
+	
+	@Override
+	public void getTextTooltip(List<String> list, EntityPlayer player)
+	{
+	}
+	
+	@Override
+	public boolean hasProgressBars(EntityPlayer player)
+	{
+		return true;
+	}
+	
+	@Override
+	public ProgressBar[] getProgressBars(EntityPlayer player)
+	{
+		bar.setProgress(fishCooldown);
+		if(fishMaxCooldown > 0)
+			bar.setMaxValue(fishMaxCooldown);
+		
+		bar.filledMainColor = 0xFFFFB6B2;
+		bar.filledAlternateColor = 0xFFB2807E;
+		bar.backgroundColor = 0xFF725251;
+		bar.borderColor = 0xFF757575;
+		
+		bar.prefix = "Cooldown";
+		
+		return new ProgressBar[] { bar };
 	}
 }
