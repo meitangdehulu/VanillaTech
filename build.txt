@@ -1,9 +1,16 @@
-forge_version=1.12.2-14.23.0.2489
-mod_version=3b
-hammercore_version=1.9.5.0
+#Project info
+author=APengu
 
-release_type=beta
+#Runtime info
+forge_version=14.23.0.2489
 minecraft_version=1.12.2
-cf_mc_version=1.12.2
+mcp=snapshot_20170624
+hc_version=1.9.5.2
 
-project_id=273213
+#Mod info
+mod_id=vanillatech
+mod_id_fancy=VanillaTech
+mod_name=Vanilla Tech
+mod_version=4r
+cf_project=273213
+release_type=release

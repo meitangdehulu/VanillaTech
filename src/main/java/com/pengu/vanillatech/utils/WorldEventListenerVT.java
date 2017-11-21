@@ -3,6 +3,10 @@ package com.pengu.vanillatech.utils;
 import java.util.List;
 import java.util.Random;
 
+import com.pengu.hammercore.HammerCore;
+import com.pengu.vanillatech.init.BlocksVT;
+import com.pengu.vanillatech.init.DamageSourcesVT;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -14,10 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IWorldEventListener;
 import net.minecraft.world.World;
-
-import com.pengu.hammercore.HammerCore;
-import com.pengu.vanillatech.init.BlocksVT;
-import com.pengu.vanillatech.init.DamageSourcesVT;
 
 public class WorldEventListenerVT implements IWorldEventListener
 {
@@ -81,7 +81,7 @@ public class WorldEventListenerVT implements IWorldEventListener
 	@Override
 	public void playEvent(EntityPlayer player, int type, BlockPos blockPosIn, int data)
 	{
-		if(type == 1031)
+		if(!world.isRemote && type == 1031)
 		{
 			BlockPos pos = blockPosIn.down();
 			if(world.getBlockState(pos).getBlock() == BlocksVT.UNSTABLE_METAL_BLOCK)

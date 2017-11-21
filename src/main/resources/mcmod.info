@@ -2,7 +2,7 @@
 	{
 		"modid": "vanillatech",
 		"name": "Vanilla Tech",
-		"description": "Adds different handy items and blocks",
+		"description": "Adds different handy items and blocks that don't change the theme of Vanilla Minecraft.",
 		"url": "",
 		"authorList": [ "APengu" ],
 		"logoFile": "assets/vanillatech/textures/logo.png"

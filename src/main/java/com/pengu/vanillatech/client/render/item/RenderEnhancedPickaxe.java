@@ -6,7 +6,6 @@ import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.utils.RenderUtil;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -25,7 +24,7 @@ public class RenderEnhancedPickaxe implements iItemRender
 	@SubscribeEvent
 	public void clientTick(ClientTickEvent e)
 	{
-		if(e.phase == Phase.START)
+		if(e.phase == Phase.START && !Minecraft.getMinecraft().isGamePaused())
 		{
 			if(currSize >= targetSize && currSize > 0)
 				targetSize = 0;

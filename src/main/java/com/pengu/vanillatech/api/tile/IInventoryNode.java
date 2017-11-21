@@ -4,7 +4,7 @@ import java.util.List;
 
 import net.minecraft.inventory.IInventory;
 
-public interface IInventoryNode
+public interface iInventoryNode
 {
 	void getInventories(List<IInventory> inventories);
 }

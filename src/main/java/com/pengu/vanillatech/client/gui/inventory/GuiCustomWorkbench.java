@@ -44,10 +44,9 @@ public class GuiCustomWorkbench extends GuiContainer implements IRecipeShownList
 	{
 		super.initGui();
 		this.widthTooNarrow = this.width < 379;
-//		this.recipeBookGui.init(this.width, this.height, this.mc, this.widthTooNarrow, this.inventorySlots, ((ContainerWorkbench) this.inventorySlots).craftMatrix);
-		this.guiLeft = this.recipeBookGui.updateScreenPosition(this.widthTooNarrow, this.width, this.xSize);
-		this.recipeButton = new GuiButtonImage(10, this.guiLeft + 5, this.height / 2 - 49, 20, 18, 0, 168, 19, CRAFTING_TABLE_GUI_TEXTURES);
-		this.buttonList.add(this.recipeButton);
+		this.recipeBookGui.func_194303_a(this.width, this.height, this.mc, this.widthTooNarrow, ((ContainerWorkbench)this.inventorySlots).craftMatrix);
+        this.guiLeft = this.recipeBookGui.updateScreenPosition(this.widthTooNarrow, this.width, this.xSize);
+        this.recipeButton = new GuiButtonImage(10, this.guiLeft + 5, this.height / 2 - 49, 20, 18, 0, 168, 19, CRAFTING_TABLE_GUI_TEXTURES);
 	}
 	
 	public void updateScreen()

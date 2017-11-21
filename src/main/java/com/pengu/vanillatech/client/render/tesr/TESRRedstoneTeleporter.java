@@ -27,14 +27,14 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 	{
 		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
 		
-		boolean isActive = false;
+		int activeTicks = 0;
 		int color = 0;
 		
 		if(item.hasTagCompound() && item.getTagCompound().hasKey("UUIDMost"))
 		{
 			UUID uuid = item.getTagCompound().getUniqueId("UUID");
-			Integer r = TileRedstoneTeleporter.ENABLED.get(uuid.toString());
-			isActive = (r != null ? r : 0) > 0;
+			Integer i = TileRedstoneTeleporter.TICKS.get(uuid.toString());
+			activeTicks =  i != null ? i.intValue() : 0;
 			
 			Random rand = new Random(uuid != null ? uuid.getMostSignificantBits() - uuid.getLeastSignificantBits() : 0L);
 			color = uuid != null ? rand.nextInt(0xFFFFFF) : 0xFF7777;
@@ -44,9 +44,9 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.setRenderBounds(BlockRedstoneTeleporter.aabb);
 		sbr.setBrightness(getBrightnessForRB(null, sbr.rb));
 		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite("minecraft:blocks/stone_slab_top"));
-		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/redstone_teleporter_o" + (isActive ? "n" : "ff")));
+		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/redstone_teleporter_o" + (activeTicks > 0 ? "n" : "ff")));
 		sbr.drawBlock(0, 0, 0);
-		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/ender_torch_o" + (isActive ? "n" : "ff")));
+		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/ender_torch_o" + (activeTicks > 0 ? "n" : "ff")));
 		
 		sbr.setRenderBounds(7 / 16D, 2 / 16D, 7 / 16D, 9 / 16D, 10 / 16D, 9 / 16D);
 		sbr.disableFace(EnumFacing.UP);
@@ -58,7 +58,7 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.disableFace(EnumFacing.DOWN);
 		sbr.drawBlock(0, -2 / 16D, 5 / 16D);
 		
-		if(isActive)
+		if(activeTicks > 0)
 			sbr.setBrightness(15 << 20 | 15 << 4);
 		
 		sbr.setRenderBounds(7 / 16D, 8 / 16D, 6 / 16D, 9 / 16D, 10 / 16D, 8 / 16D);
@@ -73,11 +73,11 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		
 		sbr.end();
 		
-		if(isActive)
+		if(activeTicks > 0)
 		{
 			GL11.glPushMatrix();
 			GL11.glTranslated(.5, .55, .25);
-			GL11.glScaled(5, 5, 5);
+			GL11.glScaled(5 * (activeTicks / 10F), 5 * (activeTicks / 10F), 5 * (activeTicks / 10F));
 			RenderUtil.renderLightRayEffects(0, 0, 0, 120 << 24 | color, 0L, Minecraft.getMinecraft().player.ticksExisted / 360F, 1, 2F, 25, 15);
 			GL11.glPopMatrix();
 		}

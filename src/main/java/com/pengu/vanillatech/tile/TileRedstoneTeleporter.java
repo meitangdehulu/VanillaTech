@@ -21,6 +21,7 @@ import net.minecraft.util.math.Vec3d;
 public class TileRedstoneTeleporter extends TileSyncableTickable implements iTooltipTile
 {
 	public static final Map<String, Integer> ENABLED = new HashMap<>();
+	public static final Map<String, Integer> TICKS = new HashMap<>();
 	
 	public int activeTicks = 0;
 	public UUID uuid;
@@ -78,6 +79,12 @@ public class TileRedstoneTeleporter extends TileSyncableTickable implements iToo
 		else
 			activeTicks = 0;
 		
+		if(world.isRemote)
+			if(activeTicks > 0)
+				TICKS.put(uuid.toString(), activeTicks);
+			else
+				TICKS.remove(uuid.toString());
+			
 		if(world.isRemote || direction == null)
 			return;
 		
