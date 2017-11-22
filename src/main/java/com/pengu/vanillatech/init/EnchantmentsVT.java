@@ -8,7 +8,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.enchantments.EnchantmentAutosmelt;
 import com.pengu.vanillatech.enchantments.EnchantmentInfernalPrediction;
 import com.pengu.vanillatech.enchantments.EnchantmentRepair;
@@ -38,7 +38,7 @@ public class EnchantmentsVT
 				try
 				{
 					Enchantment e = (Enchantment) f.get(null);
-					e.setRegistryName(Info.MOD_ID, e.getName().substring(12));
+					e.setRegistryName(InfoVT.MOD_ID, e.getName().substring(12));
 					e.setName(e.getRegistryName().toString());
 					reg.register(e);
 					ench.add(e);

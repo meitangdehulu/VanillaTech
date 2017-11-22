@@ -22,7 +22,7 @@ import org.lwjgl.opengl.GL11;
 import com.pengu.hammercore.client.particle.api.SimpleParticle;
 import com.pengu.hammercore.client.particle.def.ParticleSlowZap;
 import com.pengu.hammercore.proxy.ParticleProxy_Client;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 @SideOnly(Side.CLIENT)
 public class ParticleFirefly extends SimpleParticle
@@ -130,7 +130,7 @@ public class ParticleFirefly extends SimpleParticle
 		return this;
 	}
 	
-	static final ResourceLocation tex = new ResourceLocation(Info.MOD_ID, "textures/particles/firefly.png");
+	static final ResourceLocation tex = new ResourceLocation(InfoVT.MOD_ID, "textures/particles/firefly.png");
 	
 	@Override
 	public void doRenderParticle(double x, double y, double z, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)
@@ -204,7 +204,7 @@ public class ParticleFirefly extends SimpleParticle
 		
 		particleAlpha = (float) Math.abs(Math.cos((hashCode() + world.getWorldTime()) / 10D)) * .5F;
 		
-		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(Info.MOD_ID, "textures/particles/firefly_overlay.png"));
+		Minecraft.getMinecraft().getTextureManager().bindTexture(new ResourceLocation(InfoVT.MOD_ID, "textures/particles/firefly_overlay.png"));
 		
 		buffer.begin(7, DefaultVertexFormats.PARTICLE_POSITION_TEX_COLOR_LMAP);
 		

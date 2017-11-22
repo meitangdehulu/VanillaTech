@@ -1,7 +1,7 @@
 {
     "parent": "block/orientable",
     "textures": {
-        "top": "vanillatech:blocks/enhanced_furnace_top",
+        "top": "vanillatech:blocks/unstable_metal_block",
         "front": "vanillatech:blocks/enhanced_furnace_front_off",
         "side": "vanillatech:blocks/enhanced_furnace_side"
     }

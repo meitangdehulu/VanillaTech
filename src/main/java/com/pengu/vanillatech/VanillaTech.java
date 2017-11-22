@@ -14,6 +14,7 @@ import com.pengu.vanillatech.init.BlocksVT;
 import com.pengu.vanillatech.init.EnchantmentsVT;
 import com.pengu.vanillatech.init.GuiCallbacksVT;
 import com.pengu.vanillatech.init.ItemsVT;
+import com.pengu.vanillatech.init.ManualVT;
 import com.pengu.vanillatech.init.PotionsVT;
 import com.pengu.vanillatech.init.SoundsVT;
 import com.pengu.vanillatech.init.VTLog;
@@ -40,12 +41,12 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = Info.MOD_ID, name = Info.MOD_NAME, version = Info.MOD_VERSION, dependencies = "required-after:hammercore", guiFactory = "com.pengu.vanillatech.cfg.ConfigFactoryVT")
+@Mod(modid = InfoVT.MOD_ID, name = InfoVT.MOD_NAME, version = InfoVT.MOD_VERSION, dependencies = "required-after:hammercore", guiFactory = "com.pengu.vanillatech.cfg.ConfigFactoryVT")
 public class VanillaTech
 {
 	public static final CreativeTabs tab = new CreativeTabVT(false);
 	
-	@SidedProxy(clientSide = Info.PROXY_BASE + "ClientProxy", serverSide = Info.PROXY_BASE + "CommonProxy")
+	@SidedProxy(clientSide = InfoVT.PROXY_BASE + "ClientProxy", serverSide = InfoVT.PROXY_BASE + "CommonProxy")
 	public static CommonProxy proxy;
 	
 	@Instance
@@ -54,13 +55,13 @@ public class VanillaTech
 	@EventHandler
 	public void construct(FMLConstructionEvent evt)
 	{
-		IntentManager.registerIntentHandler(Info.MOD_ID, Object.class, (name, obj) -> true);
+		IntentManager.registerIntentHandler(InfoVT.MOD_ID, Object.class, (name, obj) -> true);
 		
 		/** Allows to access specific item from Vanilla Tech. */
-		IntentManager.registerIntentHandler(Info.MOD_ID + ":item", String.class, (name, obj) -> GameRegistry.findRegistry(Item.class).getValue(new ResourceLocation(Info.MOD_ID, obj)));
+		IntentManager.registerIntentHandler(InfoVT.MOD_ID + ":item", String.class, (name, obj) -> GameRegistry.findRegistry(Item.class).getValue(new ResourceLocation(InfoVT.MOD_ID, obj)));
 		
 		/** Allows to access specific block from Vanilla Tech. */
-		IntentManager.registerIntentHandler(Info.MOD_ID + ":block", String.class, (name, obj) -> GameRegistry.findRegistry(Block.class).getValue(new ResourceLocation(Info.MOD_ID, obj)));
+		IntentManager.registerIntentHandler(InfoVT.MOD_ID + ":block", String.class, (name, obj) -> GameRegistry.findRegistry(Block.class).getValue(new ResourceLocation(InfoVT.MOD_ID, obj)));
 		
 		new EnhancerRegistry();
 	}
@@ -68,13 +69,13 @@ public class VanillaTech
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent evt)
 	{
-		SimpleRegistration.registerFieldBlocksFrom(BlocksVT.class, Info.MOD_ID, tab);
-		SimpleRegistration.registerFieldItemsFrom(ItemsVT.class, Info.MOD_ID, tab);
+		SimpleRegistration.registerFieldBlocksFrom(BlocksVT.class, InfoVT.MOD_ID, tab);
+		SimpleRegistration.registerFieldItemsFrom(ItemsVT.class, InfoVT.MOD_ID, tab);
 		GuiCallbacksVT.register();
 		proxy.preInit();
 		
-		IntentManager.sendIntent(Info.MOD_ID + ":add_enhancer_fuel", new Tuple(new ItemStack(Items.NETHER_STAR), 800));
-		IntentManager.sendIntent(Info.MOD_ID + ":add_enhancer_fuel", new Tuple(new ItemStack(ItemsVT.NETHERSTAR_SHARD), 80));
+		IntentManager.sendIntent(InfoVT.MOD_ID + ":add_enhancer_fuel", new Tuple(new ItemStack(Items.NETHER_STAR), 800));
+		IntentManager.sendIntent(InfoVT.MOD_ID + ":add_enhancer_fuel", new Tuple(new ItemStack(ItemsVT.NETHERSTAR_SHARD), 80));
 		
 		Object added = IntentManager.sendIntent("simplequarry:quarry_blacklist", (Supplier) (() -> BlocksVT.NETHERSTAR_ORE.getDefaultState()));
 		
@@ -92,6 +93,7 @@ public class VanillaTech
 		proxy.init();
 		EnchantmentsVT.init();
 		PotionsVT.init();
+		ManualVT.init();
 		
 		WorldRetroGen.addWorldFeature(new WorldGenRedRock());
 		WorldRetroGen.addWorldFeature(new WorldGenOverworldQuartz());

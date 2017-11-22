@@ -5,7 +5,7 @@ import net.minecraft.util.Tuple;
 
 import com.pengu.hammercore.intent.IntentManager;
 import com.pengu.hammercore.utils.IndexedMap;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.init.VTLog;
 
 public class EnhancerRegistry
@@ -14,7 +14,7 @@ public class EnhancerRegistry
 	
 	static
 	{
-		IntentManager.registerIntentHandler(Info.MOD_ID + ":add_enhancer_fuel", Tuple.class, (name, tuple) ->
+		IntentManager.registerIntentHandler(InfoVT.MOD_ID + ":add_enhancer_fuel", Tuple.class, (name, tuple) ->
 		{
 			enhancerFuel.put((ItemStack) tuple.getFirst(), (Integer) tuple.getSecond());
 			VTLog.info("Accepted call to register Enhancer Fuel (" + tuple.getFirst() + "=" + tuple.getSecond() + ") from mod " + name);

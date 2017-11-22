@@ -16,7 +16,7 @@ import com.pengu.hammercore.client.render.tesr.TESR;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
 import com.pengu.hammercore.client.utils.RenderUtil;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.BlockRedstoneTeleporter;
 import com.pengu.vanillatech.tile.TileRedstoneTeleporter;
 
@@ -25,7 +25,7 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 	@Override
 	public void renderItem(ItemStack item)
 	{
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		
 		int activeTicks = 0;
 		int color = 0;
@@ -44,9 +44,9 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.setRenderBounds(BlockRedstoneTeleporter.aabb);
 		sbr.setBrightness(getBrightnessForRB(null, sbr.rb));
 		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite("minecraft:blocks/stone_slab_top"));
-		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/redstone_teleporter_o" + (activeTicks > 0 ? "n" : "ff")));
+		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(InfoVT.MOD_ID + ":blocks/redstone_teleporter_o" + (activeTicks > 0 ? "n" : "ff")));
 		sbr.drawBlock(0, 0, 0);
-		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/ender_torch_o" + (activeTicks > 0 ? "n" : "ff")));
+		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(InfoVT.MOD_ID + ":blocks/ender_torch_o" + (activeTicks > 0 ? "n" : "ff")));
 		
 		sbr.setRenderBounds(7 / 16D, 2 / 16D, 7 / 16D, 9 / 16D, 10 / 16D, 9 / 16D);
 		sbr.disableFace(EnumFacing.UP);
@@ -91,7 +91,7 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		
 		GL11.glPushMatrix();
 		
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		GL11.glTranslated(x, y, z);
 		int orientation = te.direction.ordinal();
 		
@@ -113,9 +113,9 @@ public class TESRRedstoneTeleporter extends TESR<TileRedstoneTeleporter>
 		sbr.setRenderBounds(BlockRedstoneTeleporter.aabb);
 		sbr.setBrightness(getBrightnessForRB(te, sbr.rb));
 		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite("minecraft:blocks/stone_slab_top"));
-		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/redstone_teleporter_o" + (te.isActive ? "n" : "ff")));
+		sbr.setSpriteForSide(EnumFacing.UP, mc.getTextureMapBlocks().getAtlasSprite(InfoVT.MOD_ID + ":blocks/redstone_teleporter_o" + (te.isActive ? "n" : "ff")));
 		sbr.drawBlock(0, 0, 0);
-		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/ender_torch_o" + (te.isActive ? "n" : "ff")));
+		sbr.setSprite(mc.getTextureMapBlocks().getAtlasSprite(InfoVT.MOD_ID + ":blocks/ender_torch_o" + (te.isActive ? "n" : "ff")));
 		
 		double off = te.isReceiving ? .5 / 16 : 5 / 16D;
 		

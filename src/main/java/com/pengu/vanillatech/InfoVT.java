@@ -2,9 +2,9 @@ package com.pengu.vanillatech;
 
 import com.pengu.hammercore.utils.NPEUtils;
 
-public class Info
+public class InfoVT
 {
-	private Info()
+	private InfoVT()
 	{
 		NPEUtils.noInstancesError();
 	}

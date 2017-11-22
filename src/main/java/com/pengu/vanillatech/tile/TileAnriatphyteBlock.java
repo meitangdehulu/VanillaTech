@@ -50,7 +50,7 @@ public class TileAnriatphyteBlock extends TileSyncableTickable implements iToolt
 		if(world.isRemote || ent.isEntityInvulnerable(DamageSourcesVT.ANRIATPHYTE_BLOCK))
 			return;
 		new ProcessHitEntityWithZap(20 + rand.nextInt(60), 0xFFF7777, new Vec3d(pos).addVector(.5, .5, .5), ent, DamageSourcesVT.ANRIATPHYTE_BLOCK, 10).spawn();
-		lastCooldownLim = (delay += 100 + rand.nextInt(500) + ent.getHealth() * 2);
+		lastCooldownLim = (delay += 100 + rand.nextInt((int) ent.getMaxHealth() * 5) + ent.getMaxHealth() * 2);
 	}
 	
 	@Override

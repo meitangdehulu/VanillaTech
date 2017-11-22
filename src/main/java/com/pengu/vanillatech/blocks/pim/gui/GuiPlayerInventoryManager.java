@@ -10,7 +10,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.util.ResourceLocation;
 
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.pim.TilePlayerInventoryManager;
 import com.pengu.vanillatech.client.gui.inventory.GuiTexturedContainer;
 
@@ -18,7 +18,7 @@ public class GuiPlayerInventoryManager extends GuiTexturedContainer<ContainerPla
 {
 	public GuiPlayerInventoryManager(TilePlayerInventoryManager inv, EntityPlayer player)
 	{
-		super(new ContainerPlayerInventoryManager(inv, player), new ResourceLocation(Info.MOD_ID, "textures/gui/player_inventory_manager_main.png"));
+		super(new ContainerPlayerInventoryManager(inv, player), new ResourceLocation(InfoVT.MOD_ID, "textures/gui/player_inventory_manager_main.png"));
 		
 		xSize = 194;
 		ySize = 132;

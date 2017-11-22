@@ -22,7 +22,7 @@ import net.minecraftforge.event.ForgeEventFactory;
 
 import com.pengu.hammercore.common.HolidayTrigger;
 import com.pengu.hammercore.utils.AdvancementUtils;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 public class BlockSlimyFlower extends BlockWorldgenFlower
 {
@@ -88,6 +88,6 @@ public class BlockSlimyFlower extends BlockWorldgenFlower
 	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player)
 	{
-		AdvancementUtils.completeAdvancement(new ResourceLocation(Info.MOD_ID, "flora/slimy_flower"), player);
+		AdvancementUtils.completeAdvancement(new ResourceLocation(InfoVT.MOD_ID, "flora/slimy_flower"), player);
 	}
 }

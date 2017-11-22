@@ -28,7 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ClientTicker
 {
 	@SubscribeEvent
-	public void drawGui(RenderTooltipEvent e)
+	public void drawTooltip(RenderTooltipEvent.PostText e)
 	{
 		List<String> lines = e.getLines();
 		ItemStack stack = e.getStack();
@@ -60,20 +60,7 @@ public class ClientTicker
 			return Float.parseFloat(token);
 		} catch(Throwable err)
 		{
-			String[] data = token.split(":");
 			
-			if(data[0].equalsIgnoreCase("nbt") && stack.hasTagCompound())
-				return stack.getTagCompound().getFloat(data[1]);
-			else if(data[0].equalsIgnoreCase("stack"))
-			{
-				String sub = data[1];
-				
-				if(sub.equalsIgnoreCase("count") || sub.equalsIgnoreCase("amount"))
-					return stack.getCount();
-				
-				if(sub.equalsIgnoreCase("damage") || sub.equalsIgnoreCase("metadata") || sub.equalsIgnoreCase("meta"))
-					return stack.getItemDamage();
-			}
 		}
 		
 		return 0F;

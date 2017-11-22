@@ -1,5 +1,7 @@
 package com.pengu.vanillatech.blocks.items;
 
+import com.pengu.hammercore.common.items.iCustomEnchantColorItem;
+
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityLivingBase;
@@ -10,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class ItemBlockEnhancedFurnace extends ItemBlock
+public class ItemBlockEnhancedFurnace extends ItemBlock implements iCustomEnchantColorItem
 {
 	public ItemBlockEnhancedFurnace(Block block)
 	{
@@ -41,5 +43,11 @@ public class ItemBlockEnhancedFurnace extends ItemBlock
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
 	{
 		return enchantment == Enchantments.EFFICIENCY || enchantment == Enchantments.FORTUNE || enchantment == Enchantments.UNBREAKING;
+	}
+
+	@Override
+	public int getEnchantEffectColor(ItemStack stack)
+	{
+		return 0xFFFF88;
 	}
 }

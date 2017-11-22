@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.BlockGlowstoneOre;
 
 import net.minecraft.client.Minecraft;
@@ -23,10 +23,10 @@ public class RenderGlowstoneOre implements iItemRender
 	{
 		double expansion = .01 / 16;
 		
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		sbr.begin();
 		sbr.setBrightness(BlockGlowstoneOre.BRIGHTNESS.getAsInt());
-		sbr.setSprite(Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(Info.MOD_ID + ":blocks/glowstone_ore_overlay"));
+		sbr.setSprite(Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(InfoVT.MOD_ID + ":blocks/glowstone_ore_overlay"));
 		sbr.setRenderBounds(-expansion, -expansion, -expansion, 1 + expansion, 1 + expansion, 1 + expansion);
 		sbr.drawBlock(0, 0, 0);
 		sbr.end();

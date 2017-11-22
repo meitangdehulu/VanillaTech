@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
 import com.pengu.hammercore.utils.NPEUtils;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 public class VTLog
 {
@@ -15,7 +15,7 @@ public class VTLog
 	
 	public static void log(Level level, String format, Object... data)
 	{
-		FMLLog.log(Info.MOD_ID, level, format, data);
+		FMLLog.log(InfoVT.MOD_ID, level, format, data);
 	}
 	
 	public static void severe(String format, Object... data)

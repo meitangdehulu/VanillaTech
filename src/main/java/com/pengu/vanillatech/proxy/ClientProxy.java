@@ -6,7 +6,7 @@ import java.util.function.IntSupplier;
 import com.pengu.hammercore.client.render.item.ItemRenderingHandler;
 import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.render.tesr.TESR;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.BlockNetherstarOre;
 import com.pengu.vanillatech.cfg.ConfigsVT;
 import com.pengu.vanillatech.client.ClientTicker;
@@ -90,7 +90,7 @@ public class ClientProxy extends CommonProxy
 		Block b = world.getBlockState(pos).getBlock();
 		
 		if(b == BlocksVT.GLOWSTONE_ORE)
-			ParticleGlowingBlockOverlay.ensureGlowing(world, pos, Info.MOD_ID + ":blocks/glowstone_ore_overlay");
+			ParticleGlowingBlockOverlay.ensureGlowing(world, pos, InfoVT.MOD_ID + ":blocks/glowstone_ore_overlay");
 		
 		if(b == BlocksVT.NETHERSTAR_ORE)
 		{
@@ -99,7 +99,7 @@ public class ClientProxy extends CommonProxy
 			netherStarOreRand.setSeed(pos.toLong() + player.world.provider.getDimension());
 			if(BlockNetherstarOre.canBeSeenWith(held, netherStarOreRand) || player.capabilities.isCreativeMode)
 			{
-				ParticleGlowingBlockOverlay.ensureGlowing(world, pos, Info.MOD_ID + ":blocks/netherstar_ore");
+				ParticleGlowingBlockOverlay.ensureGlowing(world, pos, InfoVT.MOD_ID + ":blocks/netherstar_ore");
 				setBlockGlowingBrightness(pos, BlockNetherstarOre.BRIGHTNESS);
 			} else
 				ParticleGlowingBlockOverlay.ensureNotGlowing(world, pos);

@@ -32,7 +32,7 @@ import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.annotations.MCFBus;
 import com.pengu.hammercore.utils.AdvancementUtils;
 import com.pengu.hammercore.utils.WorldLocation;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.init.BlocksVT;
 import com.pengu.vanillatech.init.DamageSourcesVT;
 import com.pengu.vanillatech.init.ItemsVT;
@@ -141,7 +141,7 @@ public class ExplosionEvents
 					}
 				}
 			
-			ResourceLocation advancement = new ResourceLocation(Info.MOD_ID, "main/witherproof_red_stone");
+			ResourceLocation advancement = new ResourceLocation(InfoVT.MOD_ID, "main/witherproof_red_stone");
 			Advancement adv = mc.getAdvancementManager().getAdvancement(advancement);
 			if(players != null)
 				for(EntityPlayerMP mp : players)

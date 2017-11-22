@@ -16,7 +16,7 @@ import com.pengu.hammercore.client.DestroyStageTexture;
 import com.pengu.hammercore.client.render.tesr.TESR;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.init.BlocksVT;
 import com.pengu.vanillatech.init.EnchantmentsVT;
 import com.pengu.vanillatech.tile.TileEnhancedFurnace;
@@ -41,7 +41,7 @@ public class TESREnhancedFurnace extends TESR<TileEnhancedFurnace>
 		if(te.face == null)
 			return;
 		
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		
 		ItemStack furnace = te.isActive ? furnaceOn : furnaceOff;
 		

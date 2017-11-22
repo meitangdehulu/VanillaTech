@@ -6,7 +6,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 public class EnchantmentInfernalPrediction extends Enchantment
 {

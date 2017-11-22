@@ -29,7 +29,7 @@ import com.pengu.hammercore.common.InterItemStack;
 import com.pengu.hammercore.net.HCNetwork;
 import com.pengu.hammercore.net.pkt.PacketParticle;
 import com.pengu.hammercore.utils.WorldLocation;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 public class EnchantmentAutosmelt extends Enchantment
 {

@@ -177,7 +177,7 @@ public class TileEnhancedFurnace extends TileSyncableTickable implements ISidedI
 		int efficiency = enchantments.get(Enchantments.EFFICIENCY) != null ? enchantments.get(Enchantments.EFFICIENCY).intValue() : 0;
 		int maxEff = Enchantments.EFFICIENCY.getMaxLevel();
 		int tickReduction = MathHelper.clamp((int) ((efficiency / (double) maxEff) * 180D), 0, 190);
-		return 200 - tickReduction;
+		return 150 - tickReduction;
 	}
 	
 	private boolean canSmelt()

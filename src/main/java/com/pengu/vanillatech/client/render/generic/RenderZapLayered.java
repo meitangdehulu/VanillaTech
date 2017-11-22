@@ -61,6 +61,13 @@ public class RenderZapLayered
 			if(world != null)
 				world.profiler.endSection();
 		}
+		
+		if(world != null)
+			world.profiler.startSection("Controllable #1");
+		ZapLayerControllable.ENHANCED_PICKACE__REPAIR.update();
+		if(world != null)
+			world.profiler.endSection();
+		
 		if(world != null)
 			world.profiler.endSection();
 	}

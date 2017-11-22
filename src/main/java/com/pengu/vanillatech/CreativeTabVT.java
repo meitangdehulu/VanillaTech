@@ -20,12 +20,12 @@ public class CreativeTabVT extends CreativeTabs
 {
 	CreativeTabVT(boolean $_)
 	{
-		super(Info.MOD_ID);
+		super(InfoVT.MOD_ID);
 	}
 	
 	public CreativeTabVT()
 	{
-		super(Info.MOD_ID);
+		super(InfoVT.MOD_ID);
 		NPEUtils.noInstancesError();
 	}
 	

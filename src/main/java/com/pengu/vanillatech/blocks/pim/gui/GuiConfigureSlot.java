@@ -7,7 +7,7 @@ import java.util.Random;
 import org.lwjgl.input.Keyboard;
 
 import com.pengu.hammercore.net.HCNetwork;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.pim.NBTItemComparator;
 import com.pengu.vanillatech.blocks.pim.SlotCondition;
 import com.pengu.vanillatech.blocks.pim.SlotRule;
@@ -23,7 +23,7 @@ import net.minecraft.util.ResourceLocation;
 public class GuiConfigureSlot extends GuiScreen
 {
 	public final GuiPlayerInventoryManager parent;
-	public final ResourceLocation texture = new ResourceLocation(Info.MOD_ID, "textures/gui/player_inventory_manager_edit_slot.png");
+	public final ResourceLocation texture = new ResourceLocation(InfoVT.MOD_ID, "textures/gui/player_inventory_manager_edit_slot.png");
 	public final int slot;
 	public SlotCondition cond;
 	

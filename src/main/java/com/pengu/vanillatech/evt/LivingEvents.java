@@ -1,12 +1,17 @@
 package com.pengu.vanillatech.evt;
 
+import java.util.List;
 import java.util.Map;
 
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.annotations.MCFBus;
+import com.pengu.hammercore.common.InterItemStack;
 import com.pengu.hammercore.common.utils.WorldUtil;
 import com.pengu.hammercore.net.HCNetwork;
 import com.pengu.hammercore.utils.WorldLocation;
+import com.pengu.vanillatech.api.EnchancedPickaxeTreasures;
+import com.pengu.vanillatech.api.EnchancedPickaxeTreasures.Drop;
+import com.pengu.vanillatech.blocks.items.ItemBlockEnhancedFurnace;
 import com.pengu.vanillatech.init.ItemsVT;
 import com.pengu.vanillatech.items.ItemEnhancedPickaxe;
 import com.pengu.vanillatech.items.ItemShieldTotem;
@@ -17,14 +22,18 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.WeightedRandom;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -78,7 +87,7 @@ public class LivingEvents
 				entity.setLastAttackedEntity(evt.getSource().getTrueSource());
 			} catch(Throwable err)
 			{
-			} // should be fine
+			}
 		}
 	}
 	
@@ -89,7 +98,60 @@ public class LivingEvents
 			return;
 		ItemStack stack = e.getPlayer().getHeldItemMainhand();
 		if(!stack.isEmpty() && stack.getItem() instanceof ItemEnhancedPickaxe)
+		{
+			NBTTagCompound nbt = stack.getTagCompound();
+			if(nbt == null)
+				stack.setTagCompound(nbt = new NBTTagCompound());
+			if(e.getState().getBlockHardness(e.getWorld(), e.getPos()) > .5F)
+			{
+				nbt.setInteger("Heat", Math.max(20, nbt.getInteger("Heat")));
+				nbt.setInteger("Add", nbt.getInteger("Add") + 1);
+			}
 			HCNetwork.manager.sendToAllAround(new PacketEnhancedBlockBroken(), new WorldLocation(e.getWorld(), e.getPos()).getPointWithRad(16));
+		}
+	}
+	
+	@SubscribeEvent
+	public void getDigSpeed(PlayerEvent.BreakSpeed e)
+	{
+		EntityPlayer player = e.getEntityPlayer();
+		ItemStack mainhand = player.getHeldItemMainhand();
+		
+		if(InterItemStack.isStackNull(mainhand) && mainhand.getItem() instanceof ItemEnhancedPickaxe)
+		{
+			int rank = ItemEnhancedPickaxe.getRank(mainhand);
+			e.setNewSpeed(e.getNewSpeed() + e.getOriginalSpeed() * rank / 8F);
+		}
+	}
+	
+	@SubscribeEvent
+	public void getDrops(BlockEvent.HarvestDropsEvent e)
+	{
+		List<ItemStack> drops = e.getDrops();
+		
+		EntityPlayer player = e.getHarvester();
+		
+		if(player == null)
+			return;
+		
+		ItemStack mainhand = player.getHeldItemMainhand();
+		
+		if(!InterItemStack.isStackNull(mainhand) && mainhand.getItem() instanceof ItemEnhancedPickaxe)
+		{
+			if(e.getState().getBlock() == Blocks.STONE)
+			{
+				int chance = ItemEnhancedPickaxe.calcTreasureChance(mainhand, player);
+				if(chance > 0 && player.getRNG().nextInt(100) < chance)
+				{
+					Drop drop = EnchancedPickaxeTreasures.choose(player.getRNG(), ItemEnhancedPickaxe.getRank(mainhand));
+					
+					if(drop != null)
+						drops.add(drop.getStack());
+				}
+			}
+			
+			mainhand.setItemDamage(Math.max(0, mainhand.getItemDamage() - drops.size() * 2));
+		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = false)

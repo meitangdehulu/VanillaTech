@@ -9,7 +9,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 public class PotionsVT
 {

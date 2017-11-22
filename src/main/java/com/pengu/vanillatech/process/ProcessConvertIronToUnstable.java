@@ -13,7 +13,7 @@ import com.pengu.hammercore.common.utils.WorldUtil;
 import com.pengu.hammercore.net.HCNetwork;
 import com.pengu.hammercore.utils.AdvancementUtils;
 import com.pengu.hammercore.utils.WorldLocation;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.init.BlocksVT;
 import com.pengu.vanillatech.init.DamageSourcesVT;
 import com.pengu.vanillatech.init.ItemsVT;
@@ -143,7 +143,7 @@ public class ProcessConvertIronToUnstable implements iProcess
 			
 			List<EntityPlayerMP> pls = world.getEntitiesWithinAABB(EntityPlayerMP.class, new AxisAlignedBB(pos).grow(48));
 			for(EntityPlayerMP e : pls)
-				AdvancementUtils.completeAdvancement(new ResourceLocation(Info.MOD_ID, "main/unstable_metal_block"), e);
+				AdvancementUtils.completeAdvancement(new ResourceLocation(InfoVT.MOD_ID, "main/unstable_metal_block"), e);
 		}
 	}
 	

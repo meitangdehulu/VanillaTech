@@ -24,7 +24,7 @@ import com.pengu.hammercore.client.particle.api.SimpleParticle;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
 import com.pengu.hammercore.proxy.ParticleProxy_Client;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 
 @SideOnly(Side.CLIENT)
 public class ParticleGlowingBlockOverlay extends SimpleParticle
@@ -186,7 +186,7 @@ public class ParticleGlowingBlockOverlay extends SimpleParticle
 		
 		GL11.glPushMatrix();
 		GL11.glTranslated(x, y, z);
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		
 		sbr.begin();
 		GlStateManager.enableRescaleNormal();

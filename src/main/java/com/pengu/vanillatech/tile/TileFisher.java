@@ -52,7 +52,7 @@ public class TileFisher extends TileSyncableTickable implements iTooltipTile
 			}
 		
 		if(fishCooldown <= 0 && caught)
-			fishMaxCooldown = fishCooldown = 750 + rand.nextInt(750);
+			fishMaxCooldown = fishCooldown = 1000 + rand.nextInt(1000);
 		
 		if(fishCooldown > 0 && world.getBlockState(pos.down()).getBlock() == Blocks.WATER)
 		{

@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.client.render.generic.RenderZapLayered;
 import com.pengu.vanillatech.client.render.generic.ZapLayer;
 

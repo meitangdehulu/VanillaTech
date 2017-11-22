@@ -3,7 +3,7 @@ package com.pengu.vanillatech.client.render.item;
 import com.pengu.hammercore.client.render.item.iItemRender;
 import com.pengu.hammercore.client.render.vertex.SimpleBlockRendering;
 import com.pengu.hammercore.client.utils.RenderBlocks;
-import com.pengu.vanillatech.Info;
+import com.pengu.vanillatech.InfoVT;
 import com.pengu.vanillatech.blocks.BlockRedstoneTeleporter;
 
 import net.minecraft.client.Minecraft;
@@ -19,7 +19,7 @@ public class RenderRepeater implements iItemRender
 	public void renderItem(ItemStack item)
 	{
 		Minecraft mc = Minecraft.getMinecraft();
-		SimpleBlockRendering sbr = RenderBlocks.forMod(Info.MOD_ID).simpleRenderer;
+		SimpleBlockRendering sbr = RenderBlocks.forMod(InfoVT.MOD_ID).simpleRenderer;
 		
 		sbr.begin();
 		sbr.setRenderBounds(BlockRedstoneTeleporter.aabb);
