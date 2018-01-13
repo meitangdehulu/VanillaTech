@@ -35,6 +35,7 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Tuple;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -92,6 +93,8 @@ public class VanillaTech
 			VTLog.info("SimpleQuarry Not Detected!");
 		
 		evt.getModMetadata().logoFile = "assets/vanillatech/textures/logo.png";
+		
+		MinecraftForge.EVENT_BUS.register(this);
 		
 		if(Loader.isModLoaded("simplequarry"))
 			IntegratorVTSQ.preInit();

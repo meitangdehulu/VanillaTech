@@ -119,3 +119,49 @@ curseforge {
         }
 	}
 }
+
+task signJar(type: SignJar, dependsOn: reobfJar) {
+    onlyIf {
+        project.hasProperty('keyStore')
+    }
+    keyStore = project.findProperty('keyStore')
+    alias = project.findProperty('keyStoreAlias')
+    storePass = project.findProperty('keyStorePass')
+    keyPass = project.findProperty('keyStoreKeyPass')
+    inputFile = jar.archivePath
+    outputFile = jar.archivePath
+}
+
+task signDeobfJar(type: SignJar, dependsOn: deobfJar) {
+    onlyIf {
+        project.hasProperty('keyStore')
+    }
+    keyStore = project.findProperty('keyStore')
+    alias = project.findProperty('keyStoreAlias')
+    storePass = project.findProperty('keyStorePass')
+    keyPass = project.findProperty('keyStoreKeyPass')
+    inputFile = deobfJar.archivePath
+    outputFile = deobfJar.archivePath
+}
+
+task signSrcJar(type: SignJar, dependsOn: srcJar) {
+    onlyIf {
+        project.hasProperty('keyStore')
+    }
+    keyStore = project.findProperty('keyStore')
+    alias = project.findProperty('keyStoreAlias')
+    storePass = project.findProperty('keyStorePass')
+    keyPass = project.findProperty('keyStoreKeyPass')
+    inputFile = srcJar.archivePath
+    outputFile = srcJar.archivePath
+}
+
+build.dependsOn signJar
+build.dependsOn signDeobfJar
+build.dependsOn signSrcJar
+
+afterEvaluate {
+	tasks["curseforge${config.cf_project}"].dependsOn.add(signJar)
+	tasks["curseforge${config.cf_project}"].dependsOn.add(signDeobfJar)
+	tasks["curseforge${config.cf_project}"].dependsOn.add(signSrcJar)
+}

@@ -11,6 +11,6 @@ hc_version=1.9.6.2
 mod_id=vanillatech
 mod_id_fancy=VanillaTech
 mod_name=Vanilla Tech
-mod_version=5r
+mod_version=6r
 cf_project=273213
 release_type=release
