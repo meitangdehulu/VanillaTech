@@ -4,59 +4,59 @@ hc.manual_cat.vanillatech=Vanilla Tech
 
 
 
-tile.vanillatech:charcoal_block.name=Charcoal Block
-tile.vanillatech:compressed_charcoal_block.name=Compressed Charcoal Block
-tile.vanillatech:compressed_coal_block.name=Compressed Coal Block
-tile.vanillatech:red_stone.name=Red Rock
-tile.vanillatech:red_cobblestone.name=Red Cobblestone
-tile.vanillatech:quartz_ore.name=Quartz Ore
-tile.vanillatech:acacia_crafting_table.name=Acacia Crafting Table
-tile.vanillatech:birch_crafting_table.name=Birch Crafting Table
-tile.vanillatech:dark_oak_crafting_table.name=Dark Oak Crafting Table
-tile.vanillatech:jungle_crafting_table.name=Jungle Crafting Table
-tile.vanillatech:spruce_crafting_table.name=Spruce Crafting Table
-tile.vanillatech:glowstone_ore.name=Glowstone Ore
-tile.vanillatech:witherproof_red_stone.name=Wither-Proof Red Rock
-tile.vanillatech:mossy_red_cobblestone.name=Mossy Red Cobblestone
-tile.vanillatech:quartz_spike.name=Quartz Spike
-tile.vanillatech:netherstar_ore.name=Nether Star Ore
-tile.vanillatech:redstone_teleporter.name=Redstone Reciesender
-tile.vanillatech:enhanced_furnace.name=Enhanced Furnace
-tile.vanillatech:enhanced_furnace.tooltip0=Can be enchanted.
-tile.vanillatech:unstable_metal_block.name=Block of Unstable Metal
-tile.vanillatech:fisher.name=Auto-Fisher
-tile.vanillatech:anriatphyte_block.name=Block of Anriatphyte Crystals
+tile.vanillatech:charcoal_block.name=Блок древесного угля
+tile.vanillatech:compressed_charcoal_block.name=Сжатый блок древесного угля
+tile.vanillatech:compressed_coal_block.name=Сжатый блок угля
+tile.vanillatech:red_stone.name=Красный камень
+tile.vanillatech:red_cobblestone.name=Красный булыжник
+tile.vanillatech:quartz_ore.name=Кварцевая руда
+tile.vanillatech:acacia_crafting_table.name=Верстак из акации
+tile.vanillatech:birch_crafting_table.name=Верстак из берёзы
+tile.vanillatech:dark_oak_crafting_table.name=Верстак из тёмного дуба
+tile.vanillatech:jungle_crafting_table.name=Верстак из джунглевой древесины
+tile.vanillatech:spruce_crafting_table.name=Верстак из ёли
+tile.vanillatech:glowstone_ore.name=Глоустоуновая руда
+tile.vanillatech:witherproof_red_stone.name=Визеро-непронецаемый красный камень
+tile.vanillatech:mossy_red_cobblestone.name=Мшистый красный булыжник
+tile.vanillatech:quartz_spike.name=Кварцевый шып
+tile.vanillatech:netherstar_ore.name=Руда адской звёзды
+tile.vanillatech:redstone_teleporter.name=Редстоуновый приёмо-передатчик
+tile.vanillatech:enhanced_furnace.name=Улучшеная печь
+tile.vanillatech:enhanced_furnace.tooltip0=Может быть зачарована.
+tile.vanillatech:unstable_metal_block.name=Блок нестабильного метала
+tile.vanillatech:fisher.name=Авто-рыбак
+tile.vanillatech:anriatphyte_block.name=Блок анриатфитовых кристаллов
 
-tile.vanillatech:flora/slimy_flower.name=Slimy Flower
-tile.vanillatech:flora/lavender.name=Lavender
-tile.vanillatech:flora/buttercup.name=Buttercup
-tile.vanillatech:flora/daisy.name=Daisy
-
-
-
-item.vanillatech:shield_totem.name=Totem of Shield
-item.vanillatech:shield_totem.tooltip0=Completely protects player from taking
-item.vanillatech:shield_totem.tooltip1=any damage while in hotbar or offhand.
-item.vanillatech:creative_recipe_book.name=Creative Recipe Book
-item.vanillatech:creative_recipe_book.tooltip0=Use to unlock all known recipes
-item.vanillatech:backpack.name=Backpack
-item.vanillatech:backpack.tooltip0=Portable double chest
-item.vanillatech:netherstar_shard.name=Nether Star Shard
-item.vanillatech:enhanced_pickaxe.name=Enhanced Pickaxe
-item.vanillatech:unstable_metal_ingot.name=Unstable Metal Ingot
-item.vanillatech:crystal_anriatphyte.name=Anriatphyte Crystal
-item.vanillatech:ender_backpack.name=Ender Backpack
-item.vanillatech:upgrade_nether_star.name=Nether Star Mining Upgrade
-item.vanillatech:upgrade_nether_star.tooltip0=Allows quarry to mine nether star ore.
+tile.vanillatech:flora/slimy_flower.name=Слизневый цветок
+tile.vanillatech:flora/lavender.name=Лаванда
+tile.vanillatech:flora/buttercup.name=Лютик
+tile.vanillatech:flora/daisy.name=Маргаритка
 
 
 
-potion.effect.levitation_short=Potion of Levitation
-potion.effect.levitation_long=Potion of Levitation
-splash_potion.effect.levitation_short=Splash Potion of Levitation
-splash_potion.effect.levitation_long=Splash Potion of Levitation
-lingering_potion.effect.levitation_short=Lingering Potion of Levitation
-lingering_potion.effect.levitation_long=Lingering Potion of Levitation
+item.vanillatech:shield_totem.name=Тотем щита
+item.vanillatech:shield_totem.tooltip0=Полностью защищает игрока
+item.vanillatech:shield_totem.tooltip1=от любого урона пока на панели быстрого доступа или второй руке.
+item.vanillatech:creative_recipe_book.name=Творческая книга рецептов
+item.vanillatech:creative_recipe_book.tooltip0=Используйте что бы открыть все рецепты
+item.vanillatech:backpack.name=Рюкзак
+item.vanillatech:backpack.tooltip0=Переносной двойной сундук
+item.vanillatech:netherstar_shard.name=Фрагмент адской звёзды
+item.vanillatech:enhanced_pickaxe.name=Улучшеная кирка
+item.vanillatech:unstable_metal_ingot.name=Слиток нестабильного метала
+item.vanillatech:crystal_anriatphyte.name=Анриатфитовый кристалл
+item.vanillatech:ender_backpack.name=Эндер-рюкзак
+item.vanillatech:upgrade_nether_star.name=Апгрейд: добыча руды адской звёзды
+item.vanillatech:upgrade_nether_star.tooltip0=Позволяет карьеру добывать руду адской звёзды.
+
+
+
+potion.effect.levitation_short=Зелье левитации
+potion.effect.levitation_long=Зелье левитации
+splash_potion.effect.levitation_short=Взрывное зелье левитации
+splash_potion.effect.levitation_long=Взрывное зелье левитации
+lingering_potion.effect.levitation_short=Взвешенное зелье левитации
+lingering_potion.effect.levitation_long=Взвешенное зелье левитации
 
 
 
@@ -71,16 +71,16 @@ vanillatech:ranks.7=SS+
 
 
 
-enchantment.vanillatech:auto_smelt=Auto-Smelt
-enchantment.vanillatech:infernal_prediction=Infernal Predictor
-enchantment.vanillatech:repair=Self-Repair
+enchantment.vanillatech:auto_smelt=Авто-плавка
+enchantment.vanillatech:infernal_prediction=Инфернальный предсказатель
+enchantment.vanillatech:repair=Само-починка
 
 
 
-death.attack.vanillatech:quartz_spike=%s was standing on quartz spike.
-death.attack.vanillatech:unstable_block_form=%s was unstabilized.
-death.attack.vanillatech:nether_star_dissolve=%s was dissolved.
-death.attack.vanillatech:anriatphyte_block=%s was slain by Anriatphyte Energy.
+death.attack.vanillatech:quartz_spike=%s сел на кварцевые шыпи.
+death.attack.vanillatech:unstable_block_form=%s был дестабилизирован.
+death.attack.vanillatech:nether_star_dissolve=%s распался на частицы.
+death.attack.vanillatech:anriatphyte_block=%s был убит анриатфитовой энергией.
 
 
 
