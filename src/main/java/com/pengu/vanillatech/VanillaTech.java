@@ -16,8 +16,10 @@ import com.pengu.vanillatech.init.GuiCallbacksVT;
 import com.pengu.vanillatech.init.ItemsVT;
 import com.pengu.vanillatech.init.ManualVT;
 import com.pengu.vanillatech.init.PotionsVT;
+import com.pengu.vanillatech.init.RecipesVT;
 import com.pengu.vanillatech.init.SoundsVT;
 import com.pengu.vanillatech.init.VTLog;
+import com.pengu.vanillatech.intr.simplequarry.IntegratorVTSQ;
 import com.pengu.vanillatech.proxy.CommonProxy;
 import com.pengu.vanillatech.worldgen.WorldGenNetherStarOre;
 import com.pengu.vanillatech.worldgen.WorldGenOverworldGlowstone;
@@ -30,8 +32,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Tuple;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -39,7 +44,9 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod(modid = InfoVT.MOD_ID, name = InfoVT.MOD_NAME, version = InfoVT.MOD_VERSION, dependencies = "required-after:hammercore", guiFactory = "com.pengu.vanillatech.cfg.ConfigFactoryVT")
 public class VanillaTech
@@ -85,6 +92,9 @@ public class VanillaTech
 			VTLog.info("SimpleQuarry Not Detected!");
 		
 		evt.getModMetadata().logoFile = "assets/vanillatech/textures/logo.png";
+		
+		if(Loader.isModLoaded("simplequarry"))
+			IntegratorVTSQ.preInit();
 	}
 	
 	@EventHandler
@@ -151,5 +161,15 @@ public class VanillaTech
 	{
 		ItemMatchParams pars = new ItemMatchParams();
 		BrewingRecipe.INSTANCE.addRecipe(ItemListContainerHelper.stackPredicate(Arrays.asList(in), pars), ItemListContainerHelper.stackPredicate(Arrays.asList(ing), pars), out);
+	}
+	
+	@SubscribeEvent
+	public void addRecipes(RegistryEvent.Register<IRecipe> reg)
+	{
+		IForgeRegistry<IRecipe> fr = reg.getRegistry();
+		RecipesVT.collect() //
+		        .stream() //
+		        .filter(r -> r != null) //
+		        .forEach(fr::register);
 	}
 }

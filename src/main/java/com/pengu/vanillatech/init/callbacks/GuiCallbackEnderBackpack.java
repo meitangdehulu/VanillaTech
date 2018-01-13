@@ -5,26 +5,26 @@ import java.util.UUID;
 import com.pengu.hammercore.core.gui.iGuiCallback;
 import com.pengu.vanillatech.client.gui.inventory.GuiBackpack;
 import com.pengu.vanillatech.inventory.ContainerBackpack;
-import com.pengu.vanillatech.items.ItemBackpack;
+import com.pengu.vanillatech.items.ItemEnderBackpack;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GuiCallbackBackpack implements iGuiCallback
+public class GuiCallbackEnderBackpack implements iGuiCallback
 {
 	@Override
 	public Object getServerGuiElement(EntityPlayer player, World world, BlockPos pos)
 	{
 		UUID backpack = null;
 		
-		if(!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().getItem() instanceof ItemBackpack && player.getHeldItemMainhand().hasTagCompound())
+		if(!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().getItem() instanceof ItemEnderBackpack && player.getHeldItemMainhand().hasTagCompound())
 			backpack = player.getHeldItemMainhand().getTagCompound().getUniqueId("UUID");
-		else if(!player.getHeldItemOffhand().isEmpty() && player.getHeldItemOffhand().getItem() instanceof ItemBackpack && player.getHeldItemOffhand().hasTagCompound())
+		else if(!player.getHeldItemOffhand().isEmpty() && player.getHeldItemOffhand().getItem() instanceof ItemEnderBackpack && player.getHeldItemOffhand().hasTagCompound())
 			backpack = player.getHeldItemOffhand().getTagCompound().getUniqueId("UUID");
 		
 		if(backpack != null)
-			return new ContainerBackpack(player, backpack, false);
+			return new ContainerBackpack(player, backpack, true);
 		
 		return null;
 	}
@@ -34,13 +34,13 @@ public class GuiCallbackBackpack implements iGuiCallback
 	{
 		UUID backpack = null;
 		
-		if(!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().getItem() instanceof ItemBackpack && player.getHeldItemMainhand().hasTagCompound())
+		if(!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().getItem() instanceof ItemEnderBackpack && player.getHeldItemMainhand().hasTagCompound())
 			backpack = player.getHeldItemMainhand().getTagCompound().getUniqueId("UUID");
-		else if(!player.getHeldItemOffhand().isEmpty() && player.getHeldItemOffhand().getItem() instanceof ItemBackpack && player.getHeldItemOffhand().hasTagCompound())
+		else if(!player.getHeldItemOffhand().isEmpty() && player.getHeldItemOffhand().getItem() instanceof ItemEnderBackpack && player.getHeldItemOffhand().hasTagCompound())
 			backpack = player.getHeldItemOffhand().getTagCompound().getUniqueId("UUID");
 		
 		if(backpack != null)
-			return new GuiBackpack(backpack, false);
+			return new GuiBackpack(backpack, true);
 		
 		return null;
 	}

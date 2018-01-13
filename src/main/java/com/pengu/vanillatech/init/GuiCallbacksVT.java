@@ -7,6 +7,7 @@ import com.pengu.hammercore.core.gui.iGuiCallback;
 import com.pengu.hammercore.utils.NPEUtils;
 import com.pengu.vanillatech.init.callbacks.GuiCallbackBackpack;
 import com.pengu.vanillatech.init.callbacks.GuiCallbackCustomCraftingTable;
+import com.pengu.vanillatech.init.callbacks.GuiCallbackEnderBackpack;
 
 public class GuiCallbacksVT
 {
@@ -15,7 +16,8 @@ public class GuiCallbacksVT
 	}
 	
 	public static final iGuiCallback //
-	        BACKPACK = new GuiCallbackBackpack(), //
+	BACKPACK = new GuiCallbackBackpack(), //
+	        ENDER_BACKPACK = new GuiCallbackEnderBackpack(), //
 	        CUSTOM_CRAFTING_TABLE = new GuiCallbackCustomCraftingTable();
 	
 	public static void register()

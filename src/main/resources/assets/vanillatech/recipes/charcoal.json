@@ -1,9 +1,0 @@
-{
-    "conditions": [],
-    "type": "forge:ore_shaped",
-    "pattern": [ "c" ],
-    "key": {
-		"c": { "item": "vanillatech:charcoal_block" }
-    },
-    "result": { "item": "minecraft:coal", "data": 1, "count": 9 }
-}

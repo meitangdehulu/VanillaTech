@@ -20,11 +20,11 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class ItemBackpack extends Item
+public class ItemEnderBackpack extends Item
 {
-	public ItemBackpack()
+	public ItemEnderBackpack()
 	{
-		setUnlocalizedName("backpack");
+		setUnlocalizedName("ender_backpack");
 		setMaxStackSize(1);
 		addPropertyOverride(new ResourceLocation("open"), (stack, world, entityIn) ->
 		{
@@ -52,7 +52,7 @@ public class ItemBackpack extends Item
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
 	{
-		GuiManager.openGuiCallback(GuiCallbacksVT.BACKPACK.getGuiID(), playerIn, worldIn, playerIn.getPosition());
+		GuiManager.openGuiCallback(GuiCallbacksVT.ENDER_BACKPACK.getGuiID(), playerIn, worldIn, playerIn.getPosition());
 		HCNetwork.swingArm(playerIn, handIn);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}

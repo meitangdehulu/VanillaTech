@@ -1,3 +1,4 @@
+
 itemGroup.vanillatech=Vanilla Tech
 hc.manual_cat.vanillatech=Vanilla Tech
 
@@ -44,6 +45,9 @@ item.vanillatech:netherstar_shard.name=Nether Star Shard
 item.vanillatech:enhanced_pickaxe.name=Enhanced Pickaxe
 item.vanillatech:unstable_metal_ingot.name=Unstable Metal Ingot
 item.vanillatech:crystal_anriatphyte.name=Anriatphyte Crystal
+item.vanillatech:ender_backpack.name=Ender Backpack
+item.vanillatech:upgrade_nether_star.name=Nether Star Mining upgrade
+item.vanillatech:upgrade_nether_star.tooltip0=Allows quarry to mine nether star ore.
 
 
 

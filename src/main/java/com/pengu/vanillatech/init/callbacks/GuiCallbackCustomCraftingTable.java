@@ -10,20 +10,6 @@ import net.minecraft.world.World;
 
 public class GuiCallbackCustomCraftingTable implements iGuiCallback
 {
-	int id;
-	
-	@Override
-	public void setGuiID(int id)
-	{
-		this.id = id;
-	}
-	
-	@Override
-	public int getGuiID()
-	{
-		return id;
-	}
-	
 	@Override
 	public Object getServerGuiElement(EntityPlayer player, World world, BlockPos pos)
 	{

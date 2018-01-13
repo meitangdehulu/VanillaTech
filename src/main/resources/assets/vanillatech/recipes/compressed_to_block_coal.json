@@ -1,9 +1,0 @@
-{
-    "conditions": [],
-    "type": "forge:ore_shaped",
-    "pattern": [ "c" ],
-    "key": {
-		"c": { "item": "vanillatech:compressed_coal_block" }
-    },
-    "result": { "item": "minecraft:coal_block", "count": 9 }
-}

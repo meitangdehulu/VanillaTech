@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.lwjgl.input.Keyboard;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
 import com.pengu.hammercore.HammerCore;
 import com.pengu.hammercore.api.iProcess;
 import com.pengu.hammercore.common.utils.SoundUtil;
@@ -75,7 +74,7 @@ public class ItemEnhancedPickaxe extends ItemPickaxe
 			nbt.setInteger("Heat", heat - 1);
 			EntityPlayer player = WorldUtil.cast(entityIn, EntityPlayer.class);
 			if(player != null && heat - 1 <= 0 && crank < 7)
-				player.sendStatusMessage(new TextComponentString(ChatFormatting.RED + ChatFormatting.BOLD.toString() + "Progress reset!"), true);
+				player.sendStatusMessage(new TextComponentString(TextFormatting.RED + TextFormatting.BOLD.toString() + "Progress reset!"), true);
 			int add = nbt.getInteger("Add");
 			
 			if(add >= req && crank < 7)
@@ -116,7 +115,7 @@ public class ItemEnhancedPickaxe extends ItemPickaxe
 		EntityPlayer player = WorldUtil.cast(entityIn, EntityPlayer.class);
 		
 		if(player != null && nbt.getInteger("Heat") > 0 && crank < 7)
-			player.sendStatusMessage(new TextComponentString(ChatFormatting.GREEN + ChatFormatting.BOLD.toString() + "\u2191 " + nbt.getInteger("Add") + " / " + req), true);
+			player.sendStatusMessage(new TextComponentString(TextFormatting.GREEN + TextFormatting.BOLD.toString() + "\u2191 " + nbt.getInteger("Add") + " / " + req), true);
 	}
 	
 	@Override

@@ -1,9 +1,0 @@
-{
-    "conditions": [],
-    "type": "forge:ore_shaped",
-    "pattern": [ "p" ],
-    "key": {
-		"p": { "item": "vanillatech:jungle_crafting_table" }
-    },
-    "result": { "item": "minecraft:crafting_table" }
-}

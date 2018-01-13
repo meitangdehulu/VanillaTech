@@ -5,12 +5,12 @@ author=APengu
 forge_version=14.23.0.2489
 minecraft_version=1.12.2
 mcp=snapshot_20170624
-hc_version=1.9.5.2
+hc_version=1.9.6.2
 
 #Mod info
 mod_id=vanillatech
 mod_id_fancy=VanillaTech
 mod_name=Vanilla Tech
-mod_version=4r
+mod_version=5r
 cf_project=273213
 release_type=release

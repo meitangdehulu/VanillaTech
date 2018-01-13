@@ -25,6 +25,16 @@ public class ManualVT
 		make("anriatphyte_crystal", 2, 2, new ItemStack(ItemsVT.ANRIATPHYTE_CRYSTAL)).setPages(new ManualPage("vt.manual_desc.anriatphyte_crystal"), new ManualPage(ItemStack.EMPTY, PageType.NORMAL_CRAFTING).setRecipe(new ItemStack[] { new ItemStack(ItemsVT.ANRIATPHYTE_CRYSTAL), new ItemStack(BlocksVT.ANRIATPHYTE_BLOCK) })).setParents("vt.unstable_metal").registerEntry();
 	}
 	
+	public static ManualPage recipe(ItemStack... outputs)
+	{
+		return new ManualPage(outputs, PageType.NORMAL_CRAFTING);
+	}
+	
+	public static ManualPage page(String desc)
+	{
+		return new ManualPage("bhs.manual_desc." + desc);
+	}
+	
 	public static ManualEntry make(String id, int x, int y, ItemStack icon)
 	{
 		return new ManualEntry("vt." + id, "vanillatech", x, y, icon);
