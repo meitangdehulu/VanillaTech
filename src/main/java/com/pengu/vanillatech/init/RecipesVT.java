@@ -21,7 +21,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesVT
@@ -43,7 +45,7 @@ public class RecipesVT
 		shapeless(new ItemStack(ItemsVT.ANRIATPHYTE_CRYSTAL, 9), BlocksVT.ANRIATPHYTE_BLOCK);
 		shapeless(new ItemStack(Items.COAL, 9, 1), BlocksVT.CHARCOAL_BLOCK);
 		shapeless(new ItemStack(ItemsVT.UNSTABLE_METAL_INGOT, 9), BlocksVT.UNSTABLE_METAL_BLOCK);
-
+		
 		shaped(ItemsVT.BACKPACK, "lll", "cic", "lll", 'l', "leather", 'c', "chestWood", 'i', "nuggetIron");
 		shaped(ItemsVT.ENDER_BACKPACK, "lll", "cic", "lll", 'l', "obsidian", 'c', "chestEnder", 'i', "gemDiamond");
 		shaped(BlocksVT.ENHANCED_FURNACE, " b ", "bfb", " b ", 'b', BlocksVT.UNSTABLE_METAL_BLOCK, 'f', Blocks.FURNACE);
@@ -55,7 +57,7 @@ public class RecipesVT
 		shaped(ItemsVT.SHIELD_TOTEM, "t", "s", "t", 't', Items.TOTEM_OF_UNDYING, 's', "netherStar");
 		shaped(new ItemStack(BlocksVT.WITHER_PROOF_RED_STONE, 4), "oro", "rbr", "oro", 'r', BlocksVT.RED_STONE, 'b', Items.BLAZE_POWDER, 'o', "obsidian");
 		shaped(BlocksVT.FISHER, "sws", "wsw", "sws", 's', "string", 'w', "stickWood");
-		shaped(BlocksVT.TIME_BOMB, "tut", "usn", "tut", 't', Blocks.TNT, 'u', ItemsVT.UNSTABLE_METAL_INGOT, 's', ItemsVT.NETHERSTAR_SHARD);
+		shaped(BlocksVT.TIME_BOMB, "tut", "usu", "tut", 't', Blocks.TNT, 'u', ItemsVT.UNSTABLE_METAL_INGOT, 's', ItemsVT.NETHERSTAR_SHARD);
 		
 		if(Loader.isModLoaded("simplequarry"))
 			craftingTableSQ();
@@ -63,7 +65,17 @@ public class RecipesVT
 	
 	private static void craftingTableSQ()
 	{
-		shaped(ItemsVTSQ.NETHERSTARMINE_UPGRADE, " n ", "nun", " n ", 'n', ItemsVT.NETHERSTAR_SHARD, 'u', ItemsSQ.UPGRADE_BASE);
+		shaped(item("upgrade_nether_star"), " n ", "nun", " n ", 'n', ItemsVT.NETHERSTAR_SHARD, 'u', ItemsSQ.UPGRADE_BASE);
+	}
+	
+	public static Item item(String id)
+	{
+		return item(InfoVT.MOD_ID, id);
+	}
+	
+	public static Item item(String mod, String id)
+	{
+		return GameRegistry.findRegistry(Item.class).getValue(new ResourceLocation(mod, id));
 	}
 	
 	public static ItemStack enchantedBook(Enchantment ench, int lvl)
